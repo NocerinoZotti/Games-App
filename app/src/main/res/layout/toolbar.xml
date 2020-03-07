@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/primaryColor"
+    android:elevation="4dp"
+    android:minHeight="?attr/actionBarSize"
+    android:padding="4dp"
+    android:theme="?attr/actionBarTheme"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:subtitleTextColor="@android:color/white"
+    app:title="@string/title_activity_launcher"
+    app:titleTextColor="@android:color/white">
+
+    <ImageButton
+        android:id="@+id/button_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="24dp"
+        android:background="@null"
+        android:contentDescription="bello"
+        android:src="@android:drawable/ic_menu_sort_by_size"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+
+</androidx.appcompat.widget.Toolbar>
