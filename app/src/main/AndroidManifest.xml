@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Game"></activity>
+        <activity android:name=".SnakeGame"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
@@ -34,7 +34,7 @@
                 android:value="com.example.gamesapp.GameListActivity" />
         </activity>
         <activity
-        android:name=".GameScreen"
+        android:name=".SnakeScreen"
         android:label="GameScreen"
         android:theme="@style/AppTheme"></activity>
     </application>

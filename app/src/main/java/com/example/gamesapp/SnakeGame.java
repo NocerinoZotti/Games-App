@@ -15,7 +15,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Snake.  If not, see <http://www.gnu.org/licenses/>.
 */
-
 package com.example.gamesapp;
 
 import java.util.ArrayList;
@@ -30,7 +29,7 @@ import android.graphics.drawable.shapes.RectShape;
 import android.view.View;
 import android.widget.TextView;
 
-public class Game extends View {
+public class SnakeGame extends View {
 
     private boolean setupComplete = false;
     private int pxSquare, squaresWidth, squaresHeight,sqBorder=0,padding=0;
@@ -39,12 +38,12 @@ public class Game extends View {
     private Food food;
     private Random random;
     private TextView scoreView;
-    private GameScreen mActivity;
+    private SnakeScreen mActivity;
     public boolean gameOver=false;
     private int score,frameRate;
     private boolean darkTheme,classicMode,snakeOriented;
 
-    public Game(Context context,GameScreen activity,TextView scoreView,boolean darkTheme,boolean classicMode,boolean snakeOriented,int speed) {
+    public SnakeGame(Context context, SnakeScreen activity, TextView scoreView, boolean darkTheme, boolean classicMode, boolean snakeOriented, int speed) {
         super(context);
         mActivity = activity;
         random = new Random();
@@ -328,8 +327,8 @@ public class Game extends View {
                     if(darkTheme) shape.getPaint().setColor(Color.parseColor("#fff3f3f3"));
                     else shape.getPaint().setColor(Color.BLACK);
                     break;
-                case 1: //If Snake, Paint Blue
-                    shape.getPaint().setColor(Color.parseColor("#ff33b5e5"));
+                case 1: //If Snake, Paint Green
+                    shape.getPaint().setColor(Color.GREEN);
                     break;
                 case 2: //If Food, Paint Grey
                     shape.getPaint().setColor(Color.GRAY);

@@ -28,9 +28,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-public class GameScreen extends Activity {
+public class SnakeScreen extends Activity {
 
-    private Game game;
+    private SnakeGame snakeGame;
     private FrameLayout frameView;
     private TextView score;
     private Activity mActivity;
@@ -52,46 +52,46 @@ public class GameScreen extends Activity {
         }
         if(userPreferences.getInt("view",0) == 1)  classicMode = true;
         if(userPreferences.getInt("controls",0) == 1)  snakeOriented = true;
-        speed = speedSetting.getInt("speed", 1);
+        speed = speedSetting.getInt("speed", 0);
 
         // Create Game View & Add Handler to Current Activity
         super.onCreate(savedInstanceState);
         if(snakeOriented)
-            setContentView(R.layout.activity_game);
+            setContentView(R.layout.snake);
         else
-            setContentView(R.layout.activity_game);
+            setContentView(R.layout.snake);
         mActivity = this;
 
         // Grab Score TextView Handle, Create Game Object & Add Game to Frame
         score = (TextView) findViewById(R.id.score);
-        game = new Game(this,this,score,darkTheme,classicMode,snakeOriented,speed);
+        snakeGame = new SnakeGame(this,this,score,darkTheme,classicMode,snakeOriented,speed);
         frameView = (FrameLayout) findViewById(R.id.gameFrame);
-        frameView.addView(game);
+        frameView.addView(snakeGame);
 
     }
 
     // On Left Arrow Click, Snake Turns Left
     // Called from Button in View
     public void leftClick(View view){
-        game.snake.turnLeft();
+        snakeGame.snake.turnLeft();
     }
 
     // On Right Arrow Click, Snake Turns Right
     // Called from Button in View
     public void rightClick(View view){
-        game.snake.turnRight();
+        snakeGame.snake.turnRight();
     }
 
     // On Down Arrow Click, Snake Turns Down (Four Direction Only)
     // Called from Button in View
     public void downClick(View view){
-        game.snake.turnDown();
+        snakeGame.snake.turnDown();
     }
 
     // On Up Arrow Click, Snake Turns Up (Four Direction Only)
     // Called from Button in View
     public void upClick(View view){
-        game.snake.turnUp();
+        snakeGame.snake.turnUp();
     }
 
     // On Game Over, Make Alert Dialog with Two Options
@@ -100,15 +100,15 @@ public class GameScreen extends Activity {
 
         final CharSequence[] items = {"Play Again","Go Back"};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.gameover);
+        builder.setTitle("You reached score: "+score.getText());
         builder.setItems(items, new DialogInterface.OnClickListener() {
 
             public void onClick(DialogInterface dialog, int item) {
                 switch(item){
                     // Play Again
                     case 0:
-                        game.setup();
-                        game.invalidate();
+                        snakeGame.setup();
+                        snakeGame.invalidate();
                         break;
 
                     // Go Back
@@ -127,9 +127,9 @@ public class GameScreen extends Activity {
     public void pauseGame(){
 
         // Do Nothing if Game Over
-        if(game.gameOver) return;
+        if(snakeGame.gameOver) return;
 
-        game.snake.stopped = true;
+        snakeGame.snake.stopped = true;
 
         final CharSequence[] items = {"Continue","Start Over","Go Back"};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -140,8 +140,8 @@ public class GameScreen extends Activity {
                 switch(item){
                     // New Game (Start Over)
                     case 1:
-                        game.setup();
-                        game.invalidate();
+                        snakeGame.setup();
+                        snakeGame.invalidate();
                         break;
 
                     // End Game (Go Back)
@@ -151,8 +151,8 @@ public class GameScreen extends Activity {
 
                     // Continue Game
                     default:
-                        game.snake.stopped=false;
-                        game.invalidate();
+                        snakeGame.snake.stopped=false;
+                        snakeGame.invalidate();
                 }
             }
         });
@@ -171,11 +171,11 @@ public class GameScreen extends Activity {
 
         // On Left D-Pad Button, Snake Turns Left
         if((keyCode == KeyEvent.KEYCODE_DPAD_LEFT) && event.getRepeatCount()==0)
-            game.snake.turnLeft();
+            snakeGame.snake.turnLeft();
 
         // On Right D-Pad Button, Snake Turns Right
         if((keyCode == KeyEvent.KEYCODE_DPAD_RIGHT) && event.getRepeatCount()==0)
-            game.snake.turnRight();
+            snakeGame.snake.turnRight();
 
         return true;
     }

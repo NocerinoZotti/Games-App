@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.widget.Toolbar;
 
@@ -84,7 +83,7 @@ public class GameDetailActivity extends AppCompatActivity {
     }
 
     public void startGame(View view) {
-        final Intent start = new Intent(this, GameScreen.class);
+        final Intent start = new Intent(this, SnakeScreen.class);
         startActivity(start);
     }
 }
