@@ -1,11 +1,5 @@
 package com.example.gamesapp.dummy;
 
-import android.media.Image;
-import android.media.ImageReader;
-import android.media.ImageWriter;
-import android.provider.MediaStore;
-import android.text.Html;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,8 +8,6 @@ import java.util.Map;
 /**
  * Helper class for providing sample content for user interfaces created by
  * Android template wizards.
- * <p>
- * TODO: Replace all uses of this class before publishing your app.
  */
 public class DummyContent {
 
@@ -51,9 +43,16 @@ public class DummyContent {
 
     private static String makeDetails(int position) {
         StringBuilder builder = new StringBuilder();
-        builder.append("Details about Item: ").append(position);
-        for (int i = 0; i < position; i++) {
-            builder.append("\nMore details information here.");
+        builder.append("Play the game ").append(GAMES[position]);
+        switch (position) {
+            case 0: builder.append("\nSnake is the common name for a video game concept where the player maneuvers a line which grows in length, with the line itself being a primary obstacle. The concept originated in the 1976 arcade game Blockade, and the ease of implementing Snake has led to hundreds of versions (some of which have the word snake or worm in the title) for many platforms. After a variant was preloaded on Nokia mobile phones in 1998, there was a resurgence of interest in the snake concept as it found a larger audience. There are over 300 Snake-like games for iOS alone.");
+                break;
+            case 1: builder.append("\n");
+                break;
+            case 2: builder.append("\n");
+                break;
+            default:
+                builder.append("\n");
         }
         return builder.toString();
     }

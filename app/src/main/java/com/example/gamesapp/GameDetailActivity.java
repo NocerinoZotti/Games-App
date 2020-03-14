@@ -34,8 +34,7 @@ public class GameDetailActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own detail action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                startGame(view);
             }
         });
 
@@ -82,5 +81,10 @@ public class GameDetailActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void startGame(View view) {
+        final Intent start = new Intent(this, GameScreen.class);
+        startActivity(start);
     }
 }

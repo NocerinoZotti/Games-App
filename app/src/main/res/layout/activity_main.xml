@@ -1,76 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <include
-            android:id="@+id/tb"
-            layout="@layout/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout android:theme="@style/AppTheme.AppBarOverlay" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <include android:id="@+id/tb" android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/toolbar"/>
     </com.google.android.material.appbar.AppBarLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_media_play" />
-
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="181dp"
-        android:layout_height="238dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="60dp"
-        app:srcCompat="@mipmap/ic_launcher" />
-
-    <Button
-        android:id="@+id/start"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
-        android:background="@mipmap/ic_launcher"
-        android:text="Start to Play" />
-
-    <Button
-        android:id="@+id/games"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="150dp"
-        android:text="games" />
-
-    <Button
-        android:id="@+id/rankings"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="300dp"
-        android:text="rankings" />
-
-    <Button
-        android:id="@+id/appSett"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="450dp"
-        android:text="settings  " />
-
-    <include
-        layout="@layout/content_main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:foreground="@mipmap/ic_launcher" />
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton android:layout_gravity="bottom|right|center_vertical|center_horizontal|center|end" android:id="@+id/fab" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/fab_margin" app:srcCompat="@android:drawable/ic_media_play"/>
+    <ImageView android:layout_gravity="center_horizontal" android:id="@+id/logo" android:layout_width="181dp" android:layout_height="238dp" android:layout_marginTop="60dp" app:srcCompat="@mipmap/ic_launcher"/>
+    <Button android:layout_gravity="center" android:id="@+id/games" android:layout_width="300dp" android:layout_height="50dp" android:layout_marginTop="50dp" android:text="games"/>
+    <Button android:layout_gravity="center" android:id="@+id/appSett" android:layout_width="300dp" android:layout_height="50dp" android:layout_marginTop="250dp" android:text="settings  "/>
+    <Button android:layout_gravity="center" android:id="@+id/rankings" android:layout_width="300dp" android:layout_height="50dp" android:layout_marginTop="150dp" android:text="rankings"/>
+    <include android:layout_width="match_parent" android:layout_height="match_parent" android:foreground="@mipmap/ic_launcher" layout="@layout/content_main"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
