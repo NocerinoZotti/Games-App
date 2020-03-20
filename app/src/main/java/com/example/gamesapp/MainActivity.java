@@ -3,12 +3,12 @@ package com.example.gamesapp;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.gamesapp.ui.login.LoginActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import android.view.View;
 import android.widget.Button;
 
@@ -22,11 +22,19 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         final Button games = findViewById(R.id.games);
+        final Button ranking = findViewById(R.id.rankings);
 
         games.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view) {
                 gamesList(view);
+            }
+        });
+
+        ranking.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                ranking(view);
             }
         });
 
@@ -43,6 +51,16 @@ public class MainActivity extends AppCompatActivity {
     public void gamesList(View view) {
         final Intent gamesList = new Intent(this, GameListActivity.class);
         startActivity(gamesList);
+    }
+
+    public void ranking(View view) {
+        final Intent rank = new Intent(this, RankingActivity.class);
+        startActivity(rank);
+    }
+
+    public void login(View view) {
+        final Intent signIn = new Intent(this, LoginActivity.class);
+        startActivity(signIn);
     }
 
 }

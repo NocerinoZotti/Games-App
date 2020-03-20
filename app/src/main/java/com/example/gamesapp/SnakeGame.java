@@ -60,6 +60,10 @@ public class SnakeGame extends View {
         scoreView.setText(Integer.toString(this.score));
     }
 
+    public int getScore() {
+        return score;
+    }
+
     // Draw View
     @SuppressLint("DrawAllocation")
     protected void onDraw(Canvas canvas){

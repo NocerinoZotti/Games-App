@@ -26,6 +26,7 @@
         android:background="@null"
         android:contentDescription="bello"
         android:src="@android:drawable/ic_menu_sort_by_size"
-        tools:ignore="HardcodedText,RtlHardcoded" />
+        tools:ignore="HardcodedText,RtlHardcoded"
+        android:onClick="login"/>
 
 </androidx.appcompat.widget.Toolbar>

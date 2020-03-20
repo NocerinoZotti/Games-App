@@ -39,6 +39,8 @@
     <string name="speed">Speed</string>
     <string name="back">Back</string>
 
+    <string name="connection_fail">Connection has not been opened</string>
+
     <string-array name="optionsTheme">
         <item>Light</item>
         <item>Dark</item>

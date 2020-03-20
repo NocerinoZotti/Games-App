@@ -25,8 +25,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import com.example.gamesapp.DBHelper;
 
 public class SnakeScreen extends Activity {
 
@@ -82,13 +85,13 @@ public class SnakeScreen extends Activity {
         snakeGame.snake.turnRight();
     }
 
-    // On Down Arrow Click, Snake Turns Down (Four Direction Only)
+    // On Down Arrow Click, Snake Turns Down
     // Called from Button in View
     public void downClick(View view){
         snakeGame.snake.turnDown();
     }
 
-    // On Up Arrow Click, Snake Turns Up (Four Direction Only)
+    // On Up Arrow Click, Snake Turns Up
     // Called from Button in View
     public void upClick(View view){
         snakeGame.snake.turnUp();
@@ -98,10 +101,49 @@ public class SnakeScreen extends Activity {
     // Called from Game Object
     public void gameOver(){
 
-        final CharSequence[] items = {"Play Again","Go Back"};
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("You reached score: "+score.getText());
-        builder.setItems(items, new DialogInterface.OnClickListener() {
+        final CharSequence[] choice = {"Yes","No, i want to play again", "No, i want to quit"};
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("You reached score: "+score.getText()+".\nDo you want to save it?");
+        builder.setItems(choice, new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int item) {
+                switch(item){
+                    // Save the result
+                    case 0:
+                        builder.setMessage("Enter your username");
+                        final EditText input = new EditText(SnakeScreen.this);
+                        builder.setView(input);
+                        builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                String username = input.getText().toString();
+                                DBHelper db = new DBHelper(SnakeScreen.this);
+                                db.open();
+                                db.insertRow(username,"Snake", snakeGame.getScore());
+                                db.close();
+                            }
+                        });
+                        builder.setNegativeButton("Back", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                // what ever you want to do with No option.
+                            }
+                        });
+                        builder.show();
+                        break;
+                    case 1:
+                        snakeGame.setup();
+                        snakeGame.invalidate();
+                        break;
+                    // Don't save
+                    default:
+                        mActivity.finish();
+                }
+            }
+        });
+
+        /*final CharSequence[] items = {"Play Again","Go Back"};
+        AlertDialog.Builder build = new AlertDialog.Builder(this);
+        build.setTitle("You reached score: "+score.getText()+". Do you want to save it?");
+        build.setItems(items, new DialogInterface.OnClickListener() {
 
             public void onClick(DialogInterface dialog, int item) {
                 switch(item){
@@ -116,7 +158,7 @@ public class SnakeScreen extends Activity {
                         mActivity.finish();
                 }
             }
-        });
+        });*/
 
         builder.setCancelable(false);
         builder.create().show();
