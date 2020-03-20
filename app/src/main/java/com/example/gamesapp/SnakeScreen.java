@@ -27,9 +27,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.example.gamesapp.DBHelper;
 
 public class SnakeScreen extends Activity {
 
@@ -140,9 +138,11 @@ public class SnakeScreen extends Activity {
             }
         });
 
+        builder.create().show();
+
         /*final CharSequence[] items = {"Play Again","Go Back"};
         AlertDialog.Builder build = new AlertDialog.Builder(this);
-        build.setTitle("You reached score: "+score.getText()+". Do you want to save it?");
+        build.setTitle("What do you want to do?");
         build.setItems(items, new DialogInterface.OnClickListener() {
 
             public void onClick(DialogInterface dialog, int item) {
@@ -158,10 +158,10 @@ public class SnakeScreen extends Activity {
                         mActivity.finish();
                 }
             }
-        });*/
+        });
 
-        builder.setCancelable(false);
-        builder.create().show();
+        build.setCancelable(false);
+        build.create().show();*/
     }
 
     // On Game Pause, Stop Snake & Make Alert Dialog

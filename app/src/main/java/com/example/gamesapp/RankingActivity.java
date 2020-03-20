@@ -1,7 +1,6 @@
 package com.example.gamesapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,10 +22,12 @@ public class RankingActivity extends AppCompatActivity {
         DBHelper db = new DBHelper(RankingActivity.this);
         db.open();
         Cursor c = db.getRanking();
+        int position=0;
         String ranking = ("# \t username \t game \t points \n");
         if (c.moveToFirst()) {
             do {
-                ranking = ranking + c.getString(0) + " \t " + c.getString(1) + " \t " +
+                position++;
+                ranking = ranking + position + " \t " + c.getString(1) + " \t " +
                         c.getString(2) + " \t " + c.getString(3) + " \n";
                 rank.setText(ranking);
             } while (c.moveToNext());

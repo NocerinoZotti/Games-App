@@ -27,7 +27,6 @@
         android:background="@null"
         android:contentDescription="bello"
         android:src="@android:drawable/ic_dialog_info"
-        tools:ignore="HardcodedText,RtlHardcoded"
-        android:onClick="login"/>
+        tools:ignore="HardcodedText,RtlHardcoded" />
 
 </androidx.appcompat.widget.Toolbar>

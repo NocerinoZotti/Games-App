@@ -92,7 +92,7 @@ public class DBHelper {
 
     public Cursor getRanking()
     {
-        return db.query(DATABASE_TABLE, new String[] {KEY_ID, KEY_USERNAME, KEY_GAME, KEY_POINTS}, null, null, null, null, null);
+        return db.query(DATABASE_TABLE, new String[] {KEY_ID, KEY_USERNAME, KEY_GAME, KEY_POINTS}, null, null, null, null, KEY_POINTS + " DESC");
     }
 
 

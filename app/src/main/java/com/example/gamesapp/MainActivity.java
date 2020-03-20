@@ -2,8 +2,6 @@ package com.example.gamesapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.example.gamesapp.ui.login.LoginActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -58,9 +56,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(rank);
     }
 
-    public void login(View view) {
-        final Intent signIn = new Intent(this, LoginActivity.class);
-        startActivity(signIn);
-    }
 
 }
