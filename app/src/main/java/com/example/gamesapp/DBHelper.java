@@ -16,7 +16,7 @@ public class DBHelper {
     static final String KEY_POINTS = "points";
     static final String DATABASE_NAME = "TestDB";
     static final String DATABASE_TABLE = "Ranking";
-    static final int DATABASE_VERSIONE = 1;
+    static final int DATABASE_VERSION = 1;
 
     static final String RANKING_TABLE =
             "CREATE TABLE ranking (id integer primary key autoincrement, "
@@ -36,7 +36,7 @@ public class DBHelper {
     {
         DatabaseHelper(Context context)
         {
-            super(context, DATABASE_NAME, null, DATABASE_VERSIONE);
+            super(context, DATABASE_NAME, null, DATABASE_VERSION);
         }
 
         @Override

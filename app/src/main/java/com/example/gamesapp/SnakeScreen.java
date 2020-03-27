@@ -21,15 +21,21 @@ package com.example.gamesapp;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class SnakeScreen extends Activity {
+
+public class SnakeScreen extends AppCompatActivity {
 
     private SnakeGame snakeGame;
     private FrameLayout frameView;
@@ -62,6 +68,18 @@ public class SnakeScreen extends Activity {
         else
             setContentView(R.layout.snake);
         mActivity = this;
+
+        setContentView(R.layout.snake);
+
+        Toolbar toolbar = findViewById(R.id.tb);
+        setSupportActionBar(toolbar);
+        ImageButton options= findViewById(R.id.button_play);
+        options.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                optionsSnake(view);
+            }
+        });
 
         // Grab Score TextView Handle, Create Game Object & Add Game to Frame
         score = (TextView) findViewById(R.id.score);
@@ -118,6 +136,28 @@ public class SnakeScreen extends Activity {
                                 db.open();
                                 db.insertRow(username,"Snake", snakeGame.getScore());
                                 db.close();
+                                final CharSequence[] items = {"Play Again","Go Back"};
+                                AlertDialog.Builder build = new AlertDialog.Builder(builder.getContext());
+                                build.setTitle("What do you want to do?");
+                                build.setItems(items, new DialogInterface.OnClickListener() {
+
+                                    public void onClick(DialogInterface dialog, int item) {
+                                        switch(item){
+                                            // Play Again
+                                            case 0:
+                                                snakeGame.setup();
+                                                snakeGame.invalidate();
+                                                break;
+
+                                            // Go Back
+                                            default:
+                                                mActivity.finish();
+                                        }
+                                    }
+                            });
+
+                            build.setCancelable(false);
+                            build.create().show();
                             }
                         });
                         builder.setNegativeButton("Back", new DialogInterface.OnClickListener() {
@@ -139,29 +179,6 @@ public class SnakeScreen extends Activity {
         });
 
         builder.create().show();
-
-        /*final CharSequence[] items = {"Play Again","Go Back"};
-        AlertDialog.Builder build = new AlertDialog.Builder(this);
-        build.setTitle("What do you want to do?");
-        build.setItems(items, new DialogInterface.OnClickListener() {
-
-            public void onClick(DialogInterface dialog, int item) {
-                switch(item){
-                    // Play Again
-                    case 0:
-                        snakeGame.setup();
-                        snakeGame.invalidate();
-                        break;
-
-                    // Go Back
-                    default:
-                        mActivity.finish();
-                }
-            }
-        });
-
-        build.setCancelable(false);
-        build.create().show();*/
     }
 
     // On Game Pause, Stop Snake & Make Alert Dialog
@@ -227,6 +244,11 @@ public class SnakeScreen extends Activity {
     public void onPause(){
         super.onPause();
         pauseGame();
+    }
+
+    public void optionsSnake(View view) {
+        final Intent options = new Intent(this, SnakeOptions.class);
+        startActivity(options);
     }
 
 }
