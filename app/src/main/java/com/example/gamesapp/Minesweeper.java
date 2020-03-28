@@ -2,7 +2,6 @@ package com.example.gamesapp;
 
 import java.util.Random;
 import android.app.Activity;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Gravity;
@@ -18,9 +17,9 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MinesweeperGame extends Activity
+public class Minesweeper extends Activity
 {
-    private TextView txtMineCount;
+    private TextView txtScore;
     private TextView txtTimer;
     private ImageButton btnSmile;
 
@@ -41,7 +40,7 @@ public class MinesweeperGame extends Activity
     private boolean isTimerStarted; // check if timer already started or not
     private boolean areMinesSet; // check if mines are planted in blocks
     private boolean isGameOver;
-    private int minesToFind; // number of mines yet to be discovered
+    private int score; // number of click you made
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -49,7 +48,7 @@ public class MinesweeperGame extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_minesweeper);
 
-        txtMineCount = (TextView) findViewById(R.id.MineCount);
+        txtScore = (TextView) findViewById(R.id.ScoreCount);
         txtTimer = (TextView) findViewById(R.id.Timer);
 
         btnSmile = (ImageButton) findViewById(R.id.Smiley);
@@ -75,7 +74,7 @@ public class MinesweeperGame extends Activity
         // display all blocks in UI
         showMineField();
 
-        minesToFind = totalNumberOfMines;
+        score = 0;
         isGameOver = false;
         secondsPassed = 0;
     }
@@ -106,7 +105,7 @@ public class MinesweeperGame extends Activity
     {
         stopTimer(); // stop if timer is running
         txtTimer.setText("000"); // revert all text
-        txtMineCount.setText("000"); // revert mines count
+        txtScore.setText("000"); // revert mines count
         btnSmile.setBackgroundResource(R.drawable.smile);
 
         // remove all rows from mineField TableLayout
@@ -116,7 +115,6 @@ public class MinesweeperGame extends Activity
         isTimerStarted = false;
         areMinesSet = false;
         isGameOver = false;
-        minesToFind = 0;
     }
 
     private void createMineField()
@@ -176,6 +174,8 @@ public class MinesweeperGame extends Activity
                         // till we get numbered mines
                         if (!blocks[currentRow][currentColumn].isFlagged())
                         {
+
+                            updateScoreDisplay();
                             // open nearby blocks till we get numbered blocks
                             rippleUncover(currentRow, currentColumn);
 
@@ -262,6 +262,7 @@ public class MinesweeperGame extends Activity
                                 (blocks[currentRow][currentColumn].isEnabled() || blocks[currentRow][currentColumn].isFlagged()))
                         {
 
+
                             // for long clicks set:
                             // 1. empty blocks to flagged
                             // 2. flagged to question mark
@@ -273,8 +274,6 @@ public class MinesweeperGame extends Activity
                                 blocks[currentRow][currentColumn].setBlockAsDisabled(false);
                                 blocks[currentRow][currentColumn].setFlagIcon(true);
                                 blocks[currentRow][currentColumn].setFlagged(true);
-                                minesToFind--; //reduce mine count
-                                updateMineCountDisplay();
                             }
                             // case 2. set flagged to question mark
                             else if (!blocks[currentRow][currentColumn].isQuestionMarked())
@@ -283,8 +282,6 @@ public class MinesweeperGame extends Activity
                                 blocks[currentRow][currentColumn].setQuestionMarkIcon(true);
                                 blocks[currentRow][currentColumn].setFlagged(false);
                                 blocks[currentRow][currentColumn].setQuestionMarked(true);
-                                minesToFind++; // increase mine count
-                                updateMineCountDisplay();
                             }
                             // case 3. change to blank square
                             else
@@ -294,15 +291,9 @@ public class MinesweeperGame extends Activity
                                 blocks[currentRow][currentColumn].setQuestionMarked(false);
                                 // if it is flagged then increment mine count
                                 if (blocks[currentRow][currentColumn].isFlagged())
-                                {
-                                    minesToFind++; // increase mine count
-                                    updateMineCountDisplay();
-                                }
-                                // remove flagged status
-                                blocks[currentRow][currentColumn].setFlagged(false);
+                                    blocks[currentRow][currentColumn].setFlagged(false);
                             }
 
-                            updateMineCountDisplay(); // update mine display
                         }
 
                         return true;
@@ -327,24 +318,13 @@ public class MinesweeperGame extends Activity
         return true;
     }
 
-    private void updateMineCountDisplay()
+    private void updateScoreDisplay()
     {
-        if (minesToFind < 0)
-        {
-            txtMineCount.setText(Integer.toString(minesToFind));
-        }
-        else if (minesToFind < 10)
-        {
-            txtMineCount.setText("00" + Integer.toString(minesToFind));
-        }
-        else if (minesToFind < 100)
-        {
-            txtMineCount.setText("0" + Integer.toString(minesToFind));
-        }
+           score++;
+        if (score<10)
+            txtScore.setText("00"+score);
         else
-        {
-            txtMineCount.setText(Integer.toString(minesToFind));
-        }
+            txtScore.setText("0"+score);
     }
 
     private void winGame()
@@ -352,12 +332,8 @@ public class MinesweeperGame extends Activity
         stopTimer();
         isTimerStarted = false;
         isGameOver = true;
-        minesToFind = 0; //set mine count to 0
-
         //set icon to cool dude
         btnSmile.setBackgroundResource(R.drawable.cool);
-
-        updateMineCountDisplay(); // update mine count
 
         // disable all buttons
         // set flagged all un-flagged blocks
@@ -421,7 +397,9 @@ public class MinesweeperGame extends Activity
         blocks[currentRow][currentColumn].triggerMine();
 
         // show message
-        showDialog("You tried for " + Integer.toString(secondsPassed) + " seconds!", 1000, false, false);
+        //showDialog("You tried for " + Integer.toString(secondsPassed) + " seconds!", 1000, false, false);
+        DBHelper db= new DBHelper(this);
+        db.recordScore(score, "Minesweeper" ,this);
     }
 
 

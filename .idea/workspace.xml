@@ -9,241 +9,19 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3dcc53d-917b-4c74-b8e6-d24efd9ad44b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Algeria.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Angola.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Benin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Botswana.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Burkina_Faso.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Burundi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-C African Rep.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Cameroon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Cape_Verde.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Chad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Comoros.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-DRO_Congo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Djibouti.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Egypt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Eq._Guinea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Eritrea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Ethiopia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Gabon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Gambia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Ghana.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Guinea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Guinea_Bissau.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Ivory_Coast.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Kenya.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Lesotho.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Liberia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Libya.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Madagascar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Malawi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Mali.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Mauritania.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Mauritius.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Morocco.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Mozambique.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Namibia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Niger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Nigeria.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-RO_Congo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Rwanda.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Sao_Tome.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Senegal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Seychelles.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Sierra_Leone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Somalia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-South_Africa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Sudan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Swaziland.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Tanzania.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Togo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Tunisia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Uganda.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Zambia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Africa/Africa-Zimbabwe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Afghanistan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Armenia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Azerbaijan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Bahrain.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Bangladesh.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Bhutan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Brunei.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Cambodia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-China.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Christmas_Is.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Georgia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Hong_Kong.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-India.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Indonesia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Iran.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Iraq.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Israel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Japan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Jordan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Kazakhstan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Kuwait.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Kyrgyzstan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Laos.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Lebanon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Macao.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Malaysia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Maldives.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Mongolia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Myanmar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Nepal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-North_Korea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Oman.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Pakistan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Philippines.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Qatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Saudi_Arabia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Singapore.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-South_Georgia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-South_Korea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Sri_Lanka.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Syria.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Taiwan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Tajikistan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Thailand.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Tibet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Timor-Leste.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Turkey.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Turkmenistan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-UAE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Uzbekistan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Vietnam.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Asia/Asia-Yemen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Albania.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Andorra.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Austria.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Belarus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Belgium.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Bosnia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Bulgaria.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Croatia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Cyprus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Cyprus_North.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Czech_Republic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Denmark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Estonia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Faroe_Islands.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Finland.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-France.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Germany.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Gibraltar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Greece.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Greenland.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Hungary.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Iceland.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Ireland.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Italy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Latvia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Liechtenstein.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Lithuania.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Luxembourg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Macedonia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Malta.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Moldova.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Monaco.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Netherlands.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Norway.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Poland.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Portugal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Romania.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Russia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-San_Marino.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Serbia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Slovakia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Slovenia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Spain.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Sweden.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Switzerland.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Ukraine.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-United_Kingdom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Europe/Europe-Vatican_City.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Anguilla.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Antigua.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Aruba.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Bahamas.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Barbados.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Belize.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Bermuda.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Canada.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Cayman_Is.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Costa_Rica.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Cuba.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Dominica.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Dominican_Rep.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-El_Salvador.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Grenada.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Guatemala.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Haiti.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Honduras.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Jamaica.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Martinique.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Mexico.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Montserrat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Nicaragua.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Panama.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Puerto_Rico.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Saint_Kitts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Saint_Lucia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Saint_Vicent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Turks_Islands.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-USA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-US_Virgin_Is..png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/North_America/North_America-Virgin_Islands.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-Am._Samoa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-Australia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-Cook_Islands.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-Fiji.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-Guam.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-Kiribati.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-Marshall_Is.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-Micronesia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-Nauru.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-New_Guinea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-New_Zealand.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-Niue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-Norfolk_Island.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-Palau.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-Pitcairn_Islands.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-Samoa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-Soloman_Is.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-Tonga.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-Tuvalu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-Vanuatu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/Oceania/Oceania-Wallis_&amp;_Futuna.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/South_America/South_America-Argentina.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/South_America/South_America-Bolivia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/South_America/South_America-Brazil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/South_America/South_America-Chile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/South_America/South_America-Colombia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/South_America/South_America-Dutch_Antilles.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/South_America/South_America-Ecuador.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/South_America/South_America-Falkland_Is.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/South_America/South_America-Fr_Polynesia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/South_America/South_America-Guyana.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/South_America/South_America-Paraguay.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/South_America/South_America-Peru.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/South_America/South_America-Suriname.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/South_America/South_America-Trinidad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/South_America/South_America-Uruguay.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/South_America/South_America-Venezuela.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gamesapp/FlagQuiz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/anim/incorrect_shake.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_flag_quiz.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/guess_button.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="d3dcc53d-917b-4c74-b8e6-d24efd9ad44b" name="Default Changelist" comment="minesweeper game (the activity doesn't start)">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_flag_quiz.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/snake.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gamesapp/DBHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gamesapp/DBHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gamesapp/GameDetailActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gamesapp/GameDetailActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gamesapp/MinesweeperGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gamesapp/Minesweeper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/gamesapp/SnakeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/gamesapp/SnakeScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_minesweeper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_minesweeper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_minesweeper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_minesweeper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -252,7 +30,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_28" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Emulatore" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -261,7 +39,12 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -289,13 +72,13 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ApkExportedModule" value="app" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Emulatore" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-03-05T15:47:18.495Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-03-28T18:16:16.878Z" />
     <property name="ExportApk.ApkPath" value="C:\dev\Games-App\app" />
     <property name="ExportApk.BuildVariants" value="debug" />
     <property name="ExportApk.SignV2" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../android_flag_quiz_game" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -312,11 +95,11 @@
       <recent name="com.example.gamesapp" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\FabioZotti\AndroidStudioProjects\Games-App\app\src\main\res\drawable-mdpi" />
-      <recent name="C:\Users\FabioZotti\AndroidStudioProjects\Games-App\app\src\main\res" />
       <recent name="C:\dev\Games-App\app" />
       <recent name="C:\dev\Games-App\app\src\main\res" />
       <recent name="C:\dev\Games-App\app\src\main\res\layout" />
+      <recent name="C:\dev\Games-App\app\src\main\res\values" />
+      <recent name="C:\dev\Games-App" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -331,61 +114,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Android App.Games-App-app">
+  <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Games-App-app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="Games-App-app" />
-      <option name="DEPLOY" value="true" />
-      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
-      <option name="DEPLOY_AS_INSTANT" value="false" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
-      <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
@@ -545,7 +277,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/gamesapp/GameDetailActivity.java</url>
-          <line>29</line>
+          <line>28</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

@@ -40,7 +40,7 @@
             android:name=".SnakeScreen"
             android:label="GameScreen"
             android:theme="@style/AppTheme" />
-        <activity android:name=".MinesweeperGame" />
+        <activity android:name=".Minesweeper" />
         <activity android:name=".SnakeGame" />
         <activity android:name=".RankingActivity" />
     </application>

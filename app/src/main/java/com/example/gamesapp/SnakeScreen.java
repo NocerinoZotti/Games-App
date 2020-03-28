@@ -138,7 +138,7 @@ import androidx.appcompat.app.AppCompatActivity;
                                 db.close();
                                 final CharSequence[] items = {"Play Again","Go Back"};
                                 AlertDialog.Builder build = new AlertDialog.Builder(builder.getContext());
-                                build.setTitle("What do you want to do?");
+                                build.setTitle("Your score has been saved! What do you want to do?");
                                 build.setItems(items, new DialogInterface.OnClickListener() {
 
                                     public void onClick(DialogInterface dialog, int item) {

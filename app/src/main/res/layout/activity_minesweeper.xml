@@ -24,7 +24,7 @@
         <TableLayout
             android:id="@+id/MineField"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="400dp"
             android:layout_span="5"
             android:gravity="bottom"
             android:padding="5dip"
@@ -54,7 +54,7 @@
             android:scaleType="center" />
 
         <TextView
-            android:id="@+id/MineCount"
+            android:id="@+id/ScoreCount"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_column="2"
