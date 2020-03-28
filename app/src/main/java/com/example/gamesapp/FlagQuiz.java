@@ -33,7 +33,6 @@ import java.util.Random;
 import java.util.Set;
 
 public class FlagQuiz extends AppCompatActivity {
-
     private static final String TAG = "FlagQuizGame Activity";
     private List<String> fileNameList; // flag file names
     private List<String> quizCountriesList;
@@ -52,7 +51,8 @@ public class FlagQuiz extends AppCompatActivity {
     private TableLayout buttonTableLayout;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flag_quiz);
 
@@ -65,7 +65,7 @@ public class FlagQuiz extends AppCompatActivity {
         shakeAnimation =
                 AnimationUtils.loadAnimation(this, R.anim.incorrect_shake);
         shakeAnimation.setRepeatCount(3); String[] regionNames =
-                getResources().getStringArray(R.array.regionsList);
+            getResources().getStringArray(R.array.regionsList);
         for (String region : regionNames )
             regionsMap.put(region, true);
         questionNumberTextView =
@@ -80,7 +80,6 @@ public class FlagQuiz extends AppCompatActivity {
 
         resetQuiz();
     }
-
     private void resetQuiz()
     {
         AssetManager assets = getAssets();
@@ -166,7 +165,7 @@ public class FlagQuiz extends AppCompatActivity {
             for (int column = 0; column < 3; column++)
             {
                 Button newGuessButton =
-                        (Button) inflater.inflate(R.layout.guess_button, null);
+                        (Button) inflater.inflate(R.layout.activity_guess_button, null);
                 String fileName = fileNameList.get((row * 3) + column);
                 newGuessButton.setText(getCountryName(fileName));
                 newGuessButton.setOnClickListener(guessButtonListener);
