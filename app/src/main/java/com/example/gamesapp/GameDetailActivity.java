@@ -93,6 +93,10 @@ public class GameDetailActivity extends AppCompatActivity {
                 start = new Intent(this, MinesweeperGame.class);
                 startActivity(start);
                 break;
+            case "3":
+                start = new Intent(this, FlagQuiz.class);
+                startActivity(start);
+                break;
             default:
                 start = new Intent(this, GameListActivity.class);
                 startActivity(start);
