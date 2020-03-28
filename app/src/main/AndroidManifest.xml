@@ -10,8 +10,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SnakeOptions"></activity>
+
+        <activity android:name=".SnakeOptions" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme">
@@ -38,6 +40,7 @@
             android:name=".SnakeScreen"
             android:label="GameScreen"
             android:theme="@style/AppTheme" />
+        <activity android:name=".MinesweeperGame"/>
         <activity android:name=".SnakeGame" />
         <activity android:name=".RankingActivity" />
     </application>

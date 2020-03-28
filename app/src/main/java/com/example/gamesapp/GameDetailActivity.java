@@ -3,15 +3,12 @@ package com.example.gamesapp;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.gamesapp.dummy.DummyContent;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import androidx.appcompat.widget.Toolbar;
-
 import android.view.View;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.ActionBar;
-
 import android.view.MenuItem;
 
 /**
@@ -83,7 +80,22 @@ public class GameDetailActivity extends AppCompatActivity {
     }
 
     public void startGame(View view) {
-        final Intent start = new Intent(this, SnakeScreen.class);
-        startActivity(start);
+
+        final Intent start;
+
+        switch (getIntent().getStringExtra(GameDetailFragment.ARG_ITEM_ID)) {
+
+            case "0":
+                start=new Intent(this, SnakeScreen.class);
+                startActivity(start);
+                break;
+            case "1":
+                start = new Intent(this, MinesweeperGame.class);
+                startActivity(start);
+                break;
+            default:
+                start = new Intent(this, GameListActivity.class);
+                startActivity(start);
+        }
     }
 }

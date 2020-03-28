@@ -35,19 +35,19 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class SnakeScreen extends AppCompatActivity {
+    public class SnakeScreen extends AppCompatActivity {
 
-    private SnakeGame snakeGame;
-    private FrameLayout frameView;
-    private TextView score;
-    private Activity mActivity;
-    SharedPreferences userPreferences, speedSetting;
-    private boolean darkTheme=false,snakeOriented=false,classicMode=false;
-    private int speed;
+        private SnakeGame snakeGame;
+        private FrameLayout frameView;
+        private TextView score;
+        private Activity mActivity;
+        SharedPreferences userPreferences, speedSetting;
+        private boolean darkTheme=false,snakeOriented=false,classicMode=false;
+        private int speed;
 
-    // Initialize Game Screen
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
+        // Initialize Game Screen
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
 
         // Set Theme, Controls Mode, View Mode & Speed According to Settings
         // Speed Setting is Stored in a Different File Because It Should Not Be Synced Across Devices
