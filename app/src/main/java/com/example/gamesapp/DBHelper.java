@@ -138,6 +138,7 @@ public class DBHelper  {
                                         switch(item){
                                             // Play Again
                                             case 0:
+                                                return;
                                             // Go Back
                                             default:
                                                 Activity a =(Activity) context;

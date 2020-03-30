@@ -32,6 +32,8 @@ public class RankingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
+        rankingList = new ArrayList<>();
+        lv = (ListView) findViewById(R.id.rankList);
         /*final TextView rank = findViewById(R.id.rankingView);
         DBHelper db = new DBHelper(RankingActivity.this);
         db.open();
@@ -47,32 +49,30 @@ public class RankingActivity extends AppCompatActivity {
             } while (c.moveToNext());
         }
         db.close();*/
-        rankingList = new ArrayList<>();
-        lv = (ListView) findViewById(R.id.rankList);
-
         DBHelper db = new DBHelper(RankingActivity.this);
         db.open();
         Cursor c = db.getRanking();
         if (c.moveToFirst()) {
-             String pos=c.getString(0);
-             String username=c.getString(1);
-             String game=c.getString(2);
-             String score=c.getString(3);
+            do {
+                String pos = c.getString(0);
+                String username = c.getString(1);
+                String game = c.getString(2);
+                String score = c.getString(3);
 
-            HashMap<String, String> record = new HashMap<>();
+                HashMap<String, String> record = new HashMap<>();
 
-            // adding each child node to HashMap key => value
-            record.put("pos", pos);
-            record.put("username", username);
-            record.put("game", game);
-            record.put("score", score);
+                // adding each child node to HashMap key => value
+                record.put("pos", pos);
+                record.put("username", username);
+                record.put("game", game);
+                record.put("score", score);
 
-            // adding record to record list
-            rankingList.add(record);
+                // adding record to record list
+                rankingList.add(record);
             } while (c.moveToNext());
+        }
         db.close();
-
-       new GetGames().execute();
+        new GetGames().execute();
     }
 
     private class GetGames extends AsyncTask<Void, Void, Void> {

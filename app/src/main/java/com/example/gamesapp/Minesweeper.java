@@ -8,6 +8,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -16,8 +17,10 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-public class Minesweeper extends Activity
+public class Minesweeper extends AppCompatActivity
 {
     private TextView txtScore;
     private TextView txtTimer;
@@ -40,7 +43,7 @@ public class Minesweeper extends Activity
     private boolean isTimerStarted; // check if timer already started or not
     private boolean areMinesSet; // check if mines are planted in blocks
     private boolean isGameOver;
-    private int score; // number of click you made
+    private int score=0;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -59,6 +62,16 @@ public class Minesweeper extends Activity
             {
                 endExistingGame();
                 startNewGame();
+            }
+        });
+
+        Toolbar toolbar = findViewById(R.id.tb);
+        setSupportActionBar(toolbar);
+        ImageButton options= findViewById(R.id.button_play);
+        options.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                showDialog("Click smiley to start New Game", 2000, true, false);
             }
         });
 
@@ -175,7 +188,6 @@ public class Minesweeper extends Activity
                         if (!blocks[currentRow][currentColumn].isFlagged())
                         {
 
-                            updateScoreDisplay();
                             // open nearby blocks till we get numbered blocks
                             rippleUncover(currentRow, currentColumn);
 
@@ -318,15 +330,6 @@ public class Minesweeper extends Activity
         return true;
     }
 
-    private void updateScoreDisplay()
-    {
-           score++;
-        if (score<10)
-            txtScore.setText("00"+score);
-        else
-            txtScore.setText("0"+score);
-    }
-
     private void winGame()
     {
         stopTimer();
@@ -402,7 +405,6 @@ public class Minesweeper extends Activity
         db.recordScore(score, "Minesweeper" ,this);
     }
 
-
     private void setMines(int currentRow, int currentColumn)
     {
         // set mines excluding the location where user clicked
@@ -468,6 +470,11 @@ public class Minesweeper extends Activity
 
     private void rippleUncover(int rowClicked, int columnClicked)
     {
+        if(blocks[rowClicked][columnClicked].isClickable())
+            updateScore();
+
+        blocks[rowClicked][columnClicked].setClickable(false);
+
         // don't open flagged or mined rows
         if (blocks[rowClicked][columnClicked].hasMine() || blocks[rowClicked][columnClicked].isFlagged())
         {
@@ -515,6 +522,17 @@ public class Minesweeper extends Activity
     {
         // disable call backs
         timer.removeCallbacks(updateTimeElasped);
+    }
+
+    public void updateScore()
+    {
+        score++;
+        if (score < 10)
+            txtScore.setText("00" + score);
+        else if (score < 100)
+            txtScore.setText("0" + score);
+        else
+            txtScore.setText("" + score);
     }
 
     // timer call back when timer is ticked

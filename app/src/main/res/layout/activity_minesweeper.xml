@@ -63,5 +63,10 @@
             android:text="000"
             android:textColor="#FFFFFF"
             android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/restart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </TableRow>
 </TableLayout>

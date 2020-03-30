@@ -53,7 +53,7 @@
     <string name="welcome">"Welcome !"</string>
 
     <string name="choices">Select Number of Choices</string>
-    <string name="correct">correct</string>
+    <string name="correct">On</string>
     <string name="guess_country">Guess the Country</string>
     <string name="guesses">guesses</string>
     <string name="incorrect_answer">Incorrect!</string>
@@ -65,7 +65,7 @@
     <string name="question">Question</string>
     <string name="quiz_title">Ten Question Flag Quiz</string>
     <string name="regions">Select Regions</string>
-    <string name="reset_quiz">Reset Quiz</string>
+    <string name="your_score">Your Score for this game:</string>
     <string-array name="regionsList">
         <item>Africa</item>
         <item>Asia</item>

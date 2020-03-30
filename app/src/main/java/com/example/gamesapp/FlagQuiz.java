@@ -203,15 +203,21 @@ public class FlagQuiz extends AppCompatActivity {
             {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-                builder.setTitle(R.string.reset_quiz);
+                builder.setTitle(R.string.your_score);
 
-                builder.setMessage(String.format("%d %s, %.02f%% %s",
-                        totalGuesses, getResources().getString(R.string.guesses),
-                        (1000 / (double) totalGuesses),
-                        getResources().getString(R.string.correct)));
+                int score=(int) (1000 / totalGuesses);
+
+                DBHelper db= new DBHelper(this);
+                db.recordScore(score,"Flag Quiz",this);
+
+                builder.setMessage(String.format("%s %d %s, %d up to 100 ",
+                        getResources().getString(R.string.correct),
+                        totalGuesses,
+                        getResources().getString(R.string.guesses),
+                        score));
 
                 builder.setCancelable(false);
-                builder.setPositiveButton(R.string.reset_quiz,
+                builder.setPositiveButton("Ok",
                         new DialogInterface.OnClickListener()
                         {
                             public void onClick(DialogInterface dialog, int id)
@@ -323,7 +329,7 @@ public class FlagQuiz extends AppCompatActivity {
                         }
                 );
 
-                regionsBuilder.setPositiveButton(R.string.reset_quiz,
+                regionsBuilder.setPositiveButton(R.string.your_score,
                         new DialogInterface.OnClickListener()
                         {
                             @Override

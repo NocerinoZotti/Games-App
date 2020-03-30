@@ -81,7 +81,7 @@ import androidx.appcompat.app.AppCompatActivity;
             }
         });
 
-        // Grab Score TextView Handle, Create Game Object & Add Game to Frame
+            // Grab Score TextView Handle, Create Game Object & Add Game to Frame
         score = (TextView) findViewById(R.id.score);
         snakeGame = new SnakeGame(this,this,score,darkTheme,classicMode,snakeOriented,speed);
         frameView = (FrameLayout) findViewById(R.id.gameFrame);
