@@ -29,34 +29,41 @@
     <ImageView
         android:id="@+id/logo"
         android:layout_width="181dp"
-        android:layout_height="250dp"
-        android:layout_gravity="center_horizontal"
+        android:layout_height="match_parent"
+        android:layout_gravity="center|start"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="60dp"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <Button
-        android:layout_gravity="center"
         android:id="@+id/games"
         android:layout_width="300dp"
         android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="130dp"
         android:layout_marginTop="50dp"
-        android:text="games"/>
+        android:layout_marginBottom="90dp"
+        android:text="games" />
 
     <Button
-        android:layout_gravity="center"
         android:id="@+id/appSett"
         android:layout_width="300dp"
         android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="130dp"
         android:layout_marginTop="250dp"
-        android:text="settings  "/>
+        android:layout_marginBottom="90dp"
+        android:text="settings  " />
 
     <Button
-        android:layout_gravity="center"
         android:id="@+id/rankings"
         android:layout_width="300dp"
         android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="130dp"
         android:layout_marginTop="150dp"
-        android:text="rankings"/>
+        android:layout_marginBottom="90dp"
+        android:text="rankings" />
 
     <include
         android:layout_width="match_parent"

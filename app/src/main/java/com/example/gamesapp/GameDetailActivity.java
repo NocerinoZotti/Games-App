@@ -1,15 +1,16 @@
 package com.example.gamesapp;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
-import com.example.gamesapp.dummy.DummyContent;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.ActionBar;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 /**
  * An activity representing a single Game detail screen. This
@@ -90,7 +91,7 @@ public class GameDetailActivity extends AppCompatActivity {
                 startActivity(start);
                 break;
             case "1":
-                start = new Intent(this, MinesweeperGame.class);
+                start = new Intent(this, Minesweeper.class);
                 startActivity(start);
                 break;
             case "3":
