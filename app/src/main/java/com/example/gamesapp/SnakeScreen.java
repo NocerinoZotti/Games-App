@@ -20,6 +20,7 @@ package com.example.gamesapp;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -44,6 +45,7 @@ import androidx.appcompat.app.AppCompatActivity;
         SharedPreferences userPreferences, speedSetting;
         private boolean darkTheme=false,snakeOriented=false,classicMode=false;
         private int speed;
+        ImageButton info;
 
         // Initialize Game Screen
         @Override
@@ -73,11 +75,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
         Toolbar toolbar = findViewById(R.id.tb);
         setSupportActionBar(toolbar);
-        ImageButton options= findViewById(R.id.button_play);
-        options.setOnClickListener(new Button.OnClickListener(){
+        info = (ImageButton)findViewById(R.id.button_play);
+
+        info.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                optionsSnake(view);
+            public void onClick(View v) {
+                pauseGame();
+                AlertDialog.Builder myAlert = new AlertDialog.Builder(SnakeScreen.this);
+                myAlert.setTitle(R.string.tutorial);
+                myAlert.setMessage(R.string.snake_desc);
+                myAlert.show();
             }
         });
 
@@ -91,7 +98,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
     // On Left Arrow Click, Snake Turns Left
     // Called from Button in View
-    public void leftClick(View view){
+    public void leftClick(View view) {
         snakeGame.snake.turnLeft();
     }
 
@@ -162,10 +169,11 @@ import androidx.appcompat.app.AppCompatActivity;
                         });
                         builder.setNegativeButton("Back", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
-                                // what ever you want to do with No option.
+                                finish();
                             }
                         });
                         builder.show();
+
                         break;
                     case 1:
                         snakeGame.setup();
@@ -178,6 +186,7 @@ import androidx.appcompat.app.AppCompatActivity;
             }
         });
 
+        builder.setCancelable(false);
         builder.create().show();
     }
 
@@ -245,10 +254,4 @@ import androidx.appcompat.app.AppCompatActivity;
         super.onPause();
         pauseGame();
     }
-
-    public void optionsSnake(View view) {
-        final Intent options = new Intent(this, SnakeOptions.class);
-        startActivity(options);
-    }
-
 }

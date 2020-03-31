@@ -7,18 +7,33 @@
     android:gravity="center_horizontal"
     android:background="@drawable/background">
 
-    <TextView android:id="@+id/titleTextView"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/quiz_title" android:layout_marginBottom="10dp"
-        android:textSize="@dimen/title_size"
-        android:textColor="@color/text_color" android:gravity="center">
-    </TextView>
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <include
+            android:id="@+id/tb"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="479dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="@string/quiz_title"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/title_size"></TextView>
 
     <TextView
         android:id="@+id/questionNumberTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="1dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
@@ -28,8 +43,8 @@
 
     <ImageView
         android:id="@+id/flagImageView"
-        android:layout_width="144dp"
-        android:layout_height="90dp"
+        android:layout_width="127dp"
+        android:layout_height="77dp"
         android:adjustViewBounds="false"></ImageView>
 
     <TextView

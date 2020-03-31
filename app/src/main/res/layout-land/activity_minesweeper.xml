@@ -5,7 +5,22 @@
     android:background="@color/primaryDarkColor"
     android:stretchColumns="0,2">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <include
+            android:id="@+id/tb"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <TableRow>
+
+
 
         <TextView
             android:id="@+id/Timer"

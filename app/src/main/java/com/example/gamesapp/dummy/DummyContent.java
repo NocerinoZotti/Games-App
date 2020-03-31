@@ -23,7 +23,7 @@ public class DummyContent {
 
     private static final int COUNT = 4;
 
-    public static final String[] GAMES= {"Snake", "Minesweeper", "Tetris", "Flag Quiz"};
+    public static final String[] GAMES= {"Snake", "Minesweeper", "Math", "Flag Quiz"};
 
     static {
         // Add some sample items.

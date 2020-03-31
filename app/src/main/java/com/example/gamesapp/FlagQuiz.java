@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -49,6 +50,7 @@ public class FlagQuiz extends AppCompatActivity {
     private TextView questionNumberTextView;
     private ImageView flagImageView;
     private TableLayout buttonTableLayout;
+    private ImageButton info;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -62,6 +64,19 @@ public class FlagQuiz extends AppCompatActivity {
         guessRows = 2;
         random = new Random();
         handler = new Handler();
+
+        info = (ImageButton)findViewById(R.id.button_play);
+
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder myAlert = new AlertDialog.Builder(FlagQuiz.this);
+                myAlert.setTitle(R.string.tutorial);
+                myAlert.setMessage(R.string.flag_desc);
+                myAlert.show();
+            }
+        });
+
         shakeAnimation =
                 AnimationUtils.loadAnimation(this, R.anim.incorrect_shake);
         shakeAnimation.setRepeatCount(3); String[] regionNames =

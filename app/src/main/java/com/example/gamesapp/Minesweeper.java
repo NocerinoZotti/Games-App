@@ -2,6 +2,7 @@ package com.example.gamesapp;
 
 import java.util.Random;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Gravity;
@@ -25,6 +26,7 @@ public class Minesweeper extends AppCompatActivity
     private TextView txtScore;
     private TextView txtTimer;
     private ImageButton btnSmile;
+    private ImageButton info;
 
     private TableLayout mineField; // table layout to add mines to
 
@@ -51,6 +53,18 @@ public class Minesweeper extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_minesweeper);
 
+        info = (ImageButton)findViewById(R.id.button_play);
+
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder myAlert = new AlertDialog.Builder(Minesweeper.this);
+                myAlert.setTitle(R.string.tutorial);
+                myAlert.setMessage(R.string.mine_desc);
+                myAlert.show();
+            }
+        });
+
         txtScore = (TextView) findViewById(R.id.ScoreCount);
         txtTimer = (TextView) findViewById(R.id.Timer);
 
@@ -67,14 +81,6 @@ public class Minesweeper extends AppCompatActivity
 
         Toolbar toolbar = findViewById(R.id.tb);
         setSupportActionBar(toolbar);
-        ImageButton options= findViewById(R.id.button_play);
-        options.setOnClickListener(new Button.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                showDialog("Click smiley to start New Game", 2000, true, false);
-            }
-        });
-
         mineField = (TableLayout)findViewById(R.id.MineField);
 
         showDialog("Click smiley to start New Game", 2000, true, false);
