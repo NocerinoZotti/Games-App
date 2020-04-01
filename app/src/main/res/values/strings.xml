@@ -38,6 +38,28 @@ Clicking a square which doesn\'t have a bomb reveals the number of neighbouring 
 
     <string name="connection_fail">Connection has not been opened</string>
 
+    <string name="snake">Snake</string>
+    <string name="minesweeper">Minesweeper</string>
+    <string name="flagquiz">Flag Quiz</string>
+
+    <string name="snake_pres">Snake is the common name for a video game concept where the player maneuvers a line which grows in length, with the line itself being a primary obstacle. The concept originated in the 1976 arcade game Blockade, and the ease of implementing Snake has led to hundreds of versions (some of which have the word snake or worm in the title) for many platforms. After a variant was preloaded on Nokia mobile phones in 1998, there was a resurgence of interest in the snake concept as it found a larger audience. There are over 300 Snake-like games for iOS alone.</string>
+    <string name="mine_pres">Minesweeper is a single-player puzzle video game. The objective of the game is to clear a rectangular board containing hidden \"mines\" or bombs without detonating any of them, with help from clues about the number of neighboring mines in each field. The game originates from the 1960s, and has been written for many computing platforms in use today. It has many variations and offshoots.</string>
+    <string name="tetris_pres">Tetris is a tile-matching puzzle video game originally designed and programmed by Soviet Russian software engineer Alexey Pajitnov. The first playable version was completed on June 6, 1984, while he was working for the Dorodnitsyn Computing Centre of the Academy of Sciences of the Soviet Union in Moscow. He derived its name from combining the Greek numerical prefix tetra- (the falling pieces contain 4 segments) and tennis, Pajitnov\'s favorite sport. The name is also used in-game to refer to the play where four lines are cleared at once.</string>
+    <string name="flag_pres">Quiz where you will find the right Flag for the night nation.</string>
+
+    <string name="yes">Yes</string>
+    <string name="play_again">No, i want to play again</string>
+    <string name="quit">No, i want to quit</string>
+
+    <string name="reach">You reached score: </string>
+    <string name="save">Do you want to save it?</string>
+    <string name="username">Enter your username</string>
+    <string name="confirm">Confirm</string>
+    <string name="play_again_button">Play Again</string>
+
+
+    <string name="savedone">Your score has been saved! What do you want to do?</string>
+
     <string-array name="optionsTheme">
         <item>Light</item>
         <item>Dark</item>
