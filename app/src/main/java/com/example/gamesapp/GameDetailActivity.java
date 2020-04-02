@@ -31,7 +31,7 @@ public class GameDetailActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startGame(view);
+                startGame(view, getIntent().getStringExtra(GameDetailFragment.ARG_ITEM_ID));
             }
         });
 
@@ -80,11 +80,11 @@ public class GameDetailActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void startGame(View view) {
+    public void startGame(View view, String id) {
 
         final Intent start;
 
-        switch (getIntent().getStringExtra(GameDetailFragment.ARG_ITEM_ID)) {
+        switch (id) {
 
             case "0":
                 start=new Intent(this, SnakeScreen.class);

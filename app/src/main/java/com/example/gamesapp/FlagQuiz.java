@@ -2,6 +2,7 @@ package com.example.gamesapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -17,12 +18,12 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -222,8 +223,7 @@ public class FlagQuiz extends AppCompatActivity {
 
                 int score=(int) (1000 / totalGuesses);
 
-                DBHelper db= new DBHelper(this);
-                db.recordScore(score,"Flag Quiz",this);
+                recordScore(score, "Flag Quiz" ,this);
 
                 builder.setMessage(String.format("%s %d %s, %d up to 100 ",
                         getResources().getString(R.string.correct),
@@ -369,4 +369,68 @@ public class FlagQuiz extends AppCompatActivity {
             submitGuess((Button) v);
         }
     };
+
+    public void recordScore(final int score, final String game, final Context context){
+        final CharSequence[] choice = {getResources().getString(R.string.yes),getResources().getString(R.string.play_again), getResources().getString(R.string.quit)};
+        final AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle(getResources().getString(R.string.reach)+score+".\n"+getResources().getString(R.string.save));
+        builder.setItems(choice, new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int item) {
+                switch(item){
+                    // Save the result
+                    case 0:
+                        builder.setMessage(getResources().getString(R.string.username));
+                        final EditText input = new EditText(context);
+                        builder.setView(input);
+                        builder.setPositiveButton(getResources().getString(R.string.confirm), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                String username = input.getText().toString();
+                                DBHelper db = new DBHelper(context);
+                                db.open();
+                                db.insertRow(username, game, score);
+                                db.close();
+                                final CharSequence[] items = {getResources().getString(R.string.play_again),getResources().getString(R.string.back)};
+                                AlertDialog.Builder build = new AlertDialog.Builder(builder.getContext());
+                                build.setTitle(getResources().getString(R.string.saveDone));
+                                build.setItems(items, new DialogInterface.OnClickListener() {
+
+                                    public void onClick(DialogInterface dialog, int item) {
+                                        switch(item){
+                                            // Play Again
+                                            case 0:
+                                                return;
+                                            // Go Back
+                                            default:
+                                                Activity a =(Activity) context;
+                                                a.finish();
+                                        }
+                                    }
+                                });
+
+                                build.setCancelable(false);
+                                build.create().show();
+                            }
+                        });
+                        builder.setNegativeButton(getResources().getString(R.string.back), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                // what ever you want to do with No option.
+                            }
+                        });
+                        builder.show();
+                        break;
+                    case 1:
+
+                        break;
+                    // Don't save
+                    default:
+                        Activity a =(Activity) context;
+                        a.finish();
+                }
+            }
+        });
+
+        builder.create().show();
+    }
+
 }

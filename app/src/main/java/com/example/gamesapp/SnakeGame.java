@@ -102,7 +102,7 @@ public class SnakeGame extends View {
                 public void run() {
                     parent.postDelayed(new Runnable() {
                         public void run() {
-                            //mActivity.gameOver();
+                            mActivity.gameOver();
                         }
                     },500);
                 }

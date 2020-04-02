@@ -63,8 +63,22 @@ public class GameDetailFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.game_detail, container, false);
 
         // Show the dummy content as text in a TextView.
-        if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.game_detail)).setText(mItem.details);
+        switch (mItem.id) {
+            case "0":
+                ((TextView) rootView.findViewById(R.id.game_detail)).setText(R.string.snake_pres);
+                break;
+            case "1":
+                ((TextView) rootView.findViewById(R.id.game_detail)).setText(R.string.mine_pres);
+                break;
+            case "2":
+                ((TextView) rootView.findViewById(R.id.game_detail)).setText(R.string.tetris_pres);
+                break;
+            case "3":
+                ((TextView) rootView.findViewById(R.id.game_detail)).setText(R.string.flag_pres);
+                break;
+            default:
+                ((TextView) rootView.findViewById(R.id.game_detail)).setText("");
+                break;
         }
 
         return rootView;

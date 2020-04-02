@@ -5,11 +5,19 @@
     <string name="title_game_list">Games</string>
     <string name="title_game_detail">Game Detail</string>
     <string name="title_activity_main">Launcher</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+
+    <string-array name="games">
+        <item>Snake</item>
+        <item>Minesweeper</item>
+        <item>Math Game</item>
+        <item>Flag Quiz</item>
+    </string-array>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
@@ -17,7 +25,7 @@
     <string name="options">Snake Options</string>
     <string name="optionsButton">Options</string>
     <string name="begin">Start</string>
-    <string name="gameover">Game Over</string>
+    <string name="gameOver">Game Over</string>
     <string name="paused">Paused</string>
     <string name="theme">Theme</string>
     <string name="controls">Controls</string>
@@ -47,18 +55,21 @@ Clicking a square which doesn\'t have a bomb reveals the number of neighbouring 
     <string name="tetris_pres">Tetris is a tile-matching puzzle video game originally designed and programmed by Soviet Russian software engineer Alexey Pajitnov. The first playable version was completed on June 6, 1984, while he was working for the Dorodnitsyn Computing Centre of the Academy of Sciences of the Soviet Union in Moscow. He derived its name from combining the Greek numerical prefix tetra- (the falling pieces contain 4 segments) and tennis, Pajitnov\'s favorite sport. The name is also used in-game to refer to the play where four lines are cleared at once.</string>
     <string name="flag_pres">Quiz where you will find the right Flag for the night nation.</string>
 
+    <string name="cont">Continue</string>
+    <string name="restart">Restart</string>
+    <string name="exit">Exit</string>
+
     <string name="yes">Yes</string>
     <string name="play_again">No, i want to play again</string>
     <string name="quit">No, i want to quit</string>
 
     <string name="reach">You reached score: </string>
-    <string name="save">Do you want to save it?</string>
+    <string name="save"> Do you want to save it?</string>
     <string name="username">Enter your username</string>
     <string name="confirm">Confirm</string>
     <string name="play_again_button">Play Again</string>
 
-
-    <string name="savedone">Your score has been saved! What do you want to do?</string>
+    <string name="saveDone">Your score has been saved! What do you want to do?</string>
 
     <string-array name="optionsTheme">
         <item>Light</item>
@@ -83,7 +94,7 @@ Clicking a square which doesn\'t have a bomb reveals the number of neighbouring 
     </string-array>
 
     <string name="menu_home">Home</string>
-    <string name="welcome">"Welcome !"</string>
+    <string name="welcome">"Welcome!"</string>
 
     <string name="choices">Select Number of Choices</string>
     <string name="correct">On</string>
@@ -134,4 +145,5 @@ Clicking a square which doesn\'t have a bomb reveals the number of neighbouring 
 		http://math-math-android-app.blogspot.com</string>
     <string name="copyright">\u00A9</string>
     <string name="quote"><i>Arithmetic is where numbers fly like pigeons in and out of your head.</i> ~Sandburg</string>
+    <string name="flagQuizDescription">\nQuiz where you will find the right Flag for the night nation.</string>
 </resources>

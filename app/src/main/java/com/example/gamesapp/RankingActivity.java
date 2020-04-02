@@ -4,9 +4,12 @@ import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,59 +23,85 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import android.widget.AdapterView.*;
 
 public class RankingActivity extends AppCompatActivity {
 
     private String TAG = MainActivity.class.getSimpleName();
-    private ListView lv;
-
-    ArrayList<HashMap<String, String>> rankingList;
-
+    int selected=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        final Spinner games = (Spinner) findViewById(R.id.spinnerGames);
+        ArrayList<HashMap<String, String>> rankingList;
         rankingList = new ArrayList<>();
-        lv = (ListView) findViewById(R.id.rankList);
-        /*final TextView rank = findViewById(R.id.rankingView);
+        ListView ranking = (ListView) findViewById(R.id.rankList);
         DBHelper db = new DBHelper(RankingActivity.this);
         db.open();
-        Cursor c = db.getRanking();
-        int position=0;
-        String ranking = ("# \t username \t game \t points \n");
-        if (c.moveToFirst()) {
-            do {
-                position++;
-                ranking = ranking + position + " \t " + c.getString(1) + " \t " +
-                        c.getString(2) + " \t " + c.getString(3) + " \n";
-                rank.setText(ranking);
-            } while (c.moveToNext());
+        Cursor c;
+
+        switch(selected){
+            case 0:
+                c = db.getGameRanking("'Snake'");
+                break;
+            case 1:
+                c = db.getGameRanking("'Minesweeper'");
+                break;
+            case 2:
+                c = db.getGameRanking("'Math Game'");
+                break;
+            case 3:
+                c = db.getGameRanking("'Flag Quiz'");
+                break;
+            default:
+                c= db.getRanking();
+                break;
         }
-        db.close();*/
-        DBHelper db = new DBHelper(RankingActivity.this);
-        db.open();
-        Cursor c = db.getRanking();
-        if (c.moveToFirst()) {
-            do {
-                String pos = c.getString(0);
-                String username = c.getString(1);
-                String game = c.getString(2);
-                String score = c.getString(3);
 
-                HashMap<String, String> record = new HashMap<>();
+        c.moveToFirst();
+        int position= 0;
 
-                // adding each child node to HashMap key => value
-                record.put("pos", pos);
-                record.put("username", username);
-                record.put("game", game);
-                record.put("score", score);
+        do {
+            position++;
+            String username = c.getString(1);
+            String game = c.getString(2);
+            String score = c.getString(3);
 
-                // adding record to record list
-                rankingList.add(record);
-            } while (c.moveToNext());
-        }
+            HashMap<String, String> record = new HashMap<>();
+
+            // adding each child node to HashMap key => value
+            record.put("pos", position+"");
+            record.put("username", username);
+            record.put("game", game);
+            record.put("score", score);
+
+            // adding record to record list
+            rankingList.add(record);
+        } while (c.moveToNext());
+
         db.close();
-        new GetGames().execute();
+
+        games.setOnItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (selected!= games.getSelectedItemId()){
+                    selected= (int) games.getSelectedItemId();
+                    onResume();
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+        ListAdapter adapter = new SimpleAdapter(RankingActivity.this, rankingList, R.layout.list_item, new String[]{ "pos", "username", "game","score"}, new int[]{R.id.pos,R.id.username,R.id.game,R.id.score});
+        ranking.setAdapter(adapter);
     }
 
     private class GetGames extends AsyncTask<Void, Void, Void> {
@@ -115,7 +144,7 @@ public class RankingActivity extends AppCompatActivity {
                         record.put("score", score);
 
                         // adding record to record list
-                        rankingList.add(record);
+                        //rankingList.add(record);
                     }
                 } catch (final JSONException e) {
                     Log.e(TAG, "Json parsing error: " + e.getMessage());
@@ -148,8 +177,8 @@ public class RankingActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-            ListAdapter adapter = new SimpleAdapter(RankingActivity.this, rankingList, R.layout.list_item, new String[]{ "pos", "username", "game","score"}, new int[]{R.id.pos,R.id.username,R.id.game,R.id.score});
-            lv.setAdapter(adapter);
+            //ListAdapter adapter = new SimpleAdapter(RankingActivity.this, rankingList, R.layout.list_item, new String[]{ "pos", "username", "game","score"}, new int[]{R.id.pos,R.id.username,R.id.game,R.id.score});
+            //ranking.setAdapter(adapter);
         }
     }
 

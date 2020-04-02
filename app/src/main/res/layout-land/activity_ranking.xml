@@ -25,9 +25,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_centerHorizontal="true"
-            android:entries="@array/games"
-            android:scrollbarSize="8dp" />
-
+            android:entries="@array/games" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
@@ -44,8 +42,8 @@
 
     <ListView
         android:id="@+id/rankList"
-        android:layout_width="417dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

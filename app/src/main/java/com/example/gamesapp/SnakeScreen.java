@@ -36,20 +36,20 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-    public class SnakeScreen extends AppCompatActivity {
+public class SnakeScreen extends AppCompatActivity {
 
-        private SnakeGame snakeGame;
-        private FrameLayout frameView;
-        private TextView score;
-        private Activity mActivity;
-        SharedPreferences userPreferences, speedSetting;
-        private boolean darkTheme=false,snakeOriented=false,classicMode=false;
-        private int speed;
-        ImageButton info;
+    private SnakeGame snakeGame;
+    private FrameLayout frameView;
+    private TextView score;
+    private Activity mActivity;
+    SharedPreferences userPreferences, speedSetting;
+    private boolean darkTheme=false,snakeOriented=false,classicMode=false;
+    private int speed;
+    ImageButton info;
 
-        // Initialize Game Screen
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
+    // Initialize Game Screen
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
 
         // Set Theme, Controls Mode, View Mode & Speed According to Settings
         // Speed Setting is Stored in a Different File Because It Should Not Be Synced Across Devices
@@ -88,7 +88,7 @@ import androidx.appcompat.app.AppCompatActivity;
             }
         });
 
-            // Grab Score TextView Handle, Create Game Object & Add Game to Frame
+        // Grab Score TextView Handle, Create Game Object & Add Game to Frame
         score = (TextView) findViewById(R.id.score);
         snakeGame = new SnakeGame(this,this,score,darkTheme,classicMode,snakeOriented,speed);
         frameView = (FrameLayout) findViewById(R.id.gameFrame);
@@ -124,28 +124,28 @@ import androidx.appcompat.app.AppCompatActivity;
     // Called from Game Object
     public void gameOver(){
 
-        final CharSequence[] choice = {"Yes","No, i want to play again", "No, i want to quit"};
+        final CharSequence[] choice = {getResources().getString(R.string.yes),getResources().getString(R.string.play_again), getResources().getString(R.string.quit)};
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("You reached score: "+score.getText()+".\nDo you want to save it?");
+        builder.setTitle(getResources().getString(R.string.reach)+score.getText()+'\n'+getResources().getString(R.string.save));
         builder.setItems(choice, new DialogInterface.OnClickListener() {
 
             public void onClick(DialogInterface dialog, int item) {
                 switch(item){
                     // Save the result
                     case 0:
-                        builder.setMessage("Enter your username");
+                        builder.setMessage(getResources().getString(R.string.username));
                         final EditText input = new EditText(SnakeScreen.this);
                         builder.setView(input);
-                        builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                        builder.setPositiveButton(getResources().getString(R.string.confirm), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 String username = input.getText().toString();
                                 DBHelper db = new DBHelper(SnakeScreen.this);
                                 db.open();
                                 db.insertRow(username,"Snake", snakeGame.getScore());
                                 db.close();
-                                final CharSequence[] items = {"Play Again","Go Back"};
+                                final CharSequence[] items = {getResources().getString(R.string.play_again),getResources().getString(R.string.back)};
                                 AlertDialog.Builder build = new AlertDialog.Builder(builder.getContext());
-                                build.setTitle("Your score has been saved! What do you want to do?");
+                                build.setTitle(getResources().getString(R.string.saveDone));
                                 build.setItems(items, new DialogInterface.OnClickListener() {
 
                                     public void onClick(DialogInterface dialog, int item) {
@@ -161,15 +161,15 @@ import androidx.appcompat.app.AppCompatActivity;
                                                 mActivity.finish();
                                         }
                                     }
-                            });
+                                });
 
-                            build.setCancelable(false);
-                            build.create().show();
+                                build.setCancelable(false);
+                                build.create().show();
                             }
                         });
-                        builder.setNegativeButton("Back", new DialogInterface.OnClickListener() {
+                        builder.setNegativeButton(getResources().getString(R.string.back), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
-                                finish();
+                                gameOver();
                             }
                         });
                         builder.show();
@@ -199,7 +199,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
         snakeGame.snake.stopped = true;
 
-        final CharSequence[] items = {"Continue","Start Over","Go Back"};
+        final CharSequence[] items = {getResources().getString(R.string.cont),getResources().getString(R.string.restart),getResources().getString(R.string.exit)};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.paused);
         builder.setItems(items, new DialogInterface.OnClickListener() {
@@ -251,7 +251,7 @@ import androidx.appcompat.app.AppCompatActivity;
     // Pause Game when Activity Paused
     @Override
     public void onPause(){
-        super.onPause();
         pauseGame();
+        super.onPause();
     }
 }
