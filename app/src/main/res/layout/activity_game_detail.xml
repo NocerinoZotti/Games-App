@@ -15,21 +15,15 @@
         android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/action_settings"
-            android:rotation="0"
-            app:srcCompat="@color/muted_blue" />
-
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:foregroundGravity="fill"
+            android:isScrollContainer="true"
+            app:contentScrim="@color/design_default_color_primary"
+            app:layout_scrollFlags="snapMargins|scroll|exitUntilCollapsed|snap"
             app:toolbarId="@+id/toolbar">
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>

@@ -1,25 +1,36 @@
 package com.example.gamesapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.view.MotionEventCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.gamesapp.dummy.DummyContent;
 
 import java.util.List;
+
+import static android.view.MotionEvent.ACTION_BUTTON_PRESS;
+import static androidx.core.view.MotionEventCompat.*;
+import static androidx.core.view.accessibility.AccessibilityEventCompat.getAction;
+import static com.example.gamesapp.GameDetailFragment.ARG_ITEM_ID;
 
 /**
  * An activity representing a list of Games. This activity
@@ -54,11 +65,11 @@ public class GameListActivity extends AppCompatActivity {
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
 
-                }
-            });
+                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                                    .setAction("Action", null).show();
+                }});
+
             mTwoPane = true;
         }
 
@@ -71,7 +82,7 @@ public class GameListActivity extends AppCompatActivity {
         recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(this, DummyContent.ITEMS, mTwoPane));
     }
 
-    public static class SimpleItemRecyclerViewAdapter
+    public class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
         private final GameListActivity mParentActivity;
@@ -80,21 +91,50 @@ public class GameListActivity extends AppCompatActivity {
         private final View.OnClickListener mOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DummyContent.DummyItem item = (DummyContent.DummyItem) view.getTag();
+                final DummyContent.DummyItem item = (DummyContent.DummyItem) view.getTag();
                 if (mTwoPane) {
                     Bundle arguments = new Bundle();
-                    arguments.putString(GameDetailFragment.ARG_ITEM_ID, item.id);
+                    arguments.putString(ARG_ITEM_ID, item.id);
                     GameDetailFragment fragment = new GameDetailFragment();
                     fragment.setArguments(arguments);
                     mParentActivity.getSupportFragmentManager().beginTransaction()
                             .replace(R.id.game_detail_container, fragment)
                             .commit();
-
+                    FloatingActionButton fab=findViewById(R.id.fab);
+                    fab.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Context context = view.getContext();
+                            String g="0";
+                            g= item.id;
+                            switch (g){
+                                case "0":
+                                    Intent startSnake  = new Intent(context, SnakeScreen.class);
+                                    context.startActivity(startSnake);
+                                    break;
+                                case "1":
+                                    Intent startMine = new Intent(context, Minesweeper.class);
+                                    context.startActivity(startMine);
+                                    break;
+                                case "2":
+                                    Intent startMath = new Intent(context, MathGame.class);
+                                    context.startActivity(startMath);
+                                    break;
+                                case "3":
+                                    Intent startQuiz = new Intent (context, FlagQuiz.class);
+                                    context.startActivity(startQuiz);
+                                    break;
+                                default:
+                                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                                            .setAction("Action", null).show();
+                                    break;
+                            }
+                        }
+                    });
                 } else {
                     Context context = view.getContext();
                     Intent intent = new Intent(context, GameDetailActivity.class);
-                    intent.putExtra(GameDetailFragment.ARG_ITEM_ID, item.id);
-
+                    intent.putExtra(ARG_ITEM_ID, item.id);
                     context.startActivity(intent);
                 }
             }

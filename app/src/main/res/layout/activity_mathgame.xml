@@ -220,36 +220,40 @@
         style="@style/base.bttn.math.addition"
         android:textColor="#FFFFFF" />
 
-    <TextView
-        android:id="@+id/additionarrow"
-        style="@style/base.arrow.addition" />
+        <TextView
+            android:id="@+id/additionarrow"
+            style="@style/base.arrow.addition"
+            android:visibility="gone" />
 
     <Button
         android:id="@+id/subtraction"
         style="@style/base.bttn.math.subtraction"
         android:textColor="#FFFFFF" />
 
-    <TextView
-        android:id="@+id/subtractionarrow"
-        style="@style/base.arrow.subtraction" />
+        <TextView
+            android:id="@+id/subtractionarrow"
+            style="@style/base.arrow.subtraction"
+            android:visibility="gone" />
 
     <Button
         android:id="@+id/multiplication"
         style="@style/base.bttn.math.multiplication"
         android:textColor="#FFFFFF" />
 
-    <TextView
-        android:id="@+id/multiplicationarrow"
-        style="@style/base.arrow.multiplication" />
+        <TextView
+            android:id="@+id/multiplicationarrow"
+            style="@style/base.arrow.multiplication"
+            android:visibility="gone" />
 
     <Button
         android:id="@+id/division"
         style="@style/base.bttn.math.division"
         android:textColor="#FFFFFF" />
 
-    <TextView
-        android:id="@+id/divisionarrow"
-        style="@style/base.arrow.division" />
+        <TextView
+            android:id="@+id/divisionarrow"
+            style="@style/base.arrow.division"
+            android:visibility="gone" />
 
     <Button
         android:id="@+id/square"

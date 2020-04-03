@@ -1,16 +1,18 @@
 package com.example.gamesapp;
 
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import androidx.appcompat.widget.Toolbar;
+
+import androidx.annotation.RequiresApi;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.ActionBar;
 import android.view.MenuItem;
-import android.widget.ImageView;
 
 /**
  * An activity representing a single Game detail screen. This
@@ -20,18 +22,17 @@ import android.widget.ImageView;
  */
 public class GameDetailActivity extends AppCompatActivity {
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_detail);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.tb);
-        setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startGame(view, getIntent().getStringExtra(GameDetailFragment.ARG_ITEM_ID));
+                startGame(getIntent().getStringExtra(GameDetailFragment.ARG_ITEM_ID), GameDetailActivity.this);
             }
         });
 
@@ -53,9 +54,23 @@ public class GameDetailActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             // Create the detail fragment and add it to the activity
             // using a fragment transaction.
+            CollapsingToolbarLayout appBar =(CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
             Bundle arguments = new Bundle();
             arguments.putString(GameDetailFragment.ARG_ITEM_ID,
                     getIntent().getStringExtra(GameDetailFragment.ARG_ITEM_ID));
+            switch(getIntent().getStringExtra(GameDetailFragment.ARG_ITEM_ID)){
+                case "0":
+                    appBar.setForeground(getDrawable(R.drawable.ic_snake));
+                    break;
+                case "1":
+                    appBar.setForeground(getDrawable(R.drawable.icon));
+                    break;
+                case "2":
+                    appBar.setForeground(getDrawable(R.drawable.ic_math));
+                    break;
+                case "3":
+                    appBar.setForeground(getDrawable(R.drawable.background));
+            }
             GameDetailFragment fragment = new GameDetailFragment();
             fragment.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()
@@ -80,7 +95,7 @@ public class GameDetailActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void startGame(View view, String id) {
+    public void startGame(String id, Context context) {
 
         final Intent start;
 

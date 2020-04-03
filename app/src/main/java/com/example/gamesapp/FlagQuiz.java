@@ -390,7 +390,7 @@ public class FlagQuiz extends AppCompatActivity {
                                 db.open();
                                 db.insertRow(username, game, score);
                                 db.close();
-                                final CharSequence[] items = {getResources().getString(R.string.play_again),getResources().getString(R.string.back)};
+                                final CharSequence[] items = {getResources().getString(R.string.restart),getResources().getString(R.string.exit)};
                                 AlertDialog.Builder build = new AlertDialog.Builder(builder.getContext());
                                 build.setTitle(getResources().getString(R.string.saveDone));
                                 build.setItems(items, new DialogInterface.OnClickListener() {

@@ -64,9 +64,9 @@ public class RankingActivity extends AppCompatActivity {
                 break;
         }
 
-        c.moveToFirst();
-        int position= 0;
 
+        int position= 0;
+        if(c.moveToFirst())
         do {
             position++;
             String username = c.getString(1);
@@ -100,8 +100,9 @@ public class RankingActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
+        if (!rankingList.isEmpty()){
         ListAdapter adapter = new SimpleAdapter(RankingActivity.this, rankingList, R.layout.list_item, new String[]{ "pos", "username", "game","score"}, new int[]{R.id.pos,R.id.username,R.id.game,R.id.score});
-        ranking.setAdapter(adapter);
+        ranking.setAdapter(adapter);}
     }
 
     private class GetGames extends AsyncTask<Void, Void, Void> {

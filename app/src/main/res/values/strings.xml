@@ -43,25 +43,27 @@ The snake can be controlled by the arrow keys.</string>
 Clicking a square which doesn\'t have a bomb reveals the number of neighbouring squares containing bombs. Use this information plus some guess work to avoid the bombs.</string>
     <string name="flag_desc">Each of the 10 questions asks you to identify the flag of a specific country and you are given several options to choose from. If you choose wrong, you can try another time until you guess the country.
     The score is based on how many times the right country was chosen on the first try.</string>
+    <string name="math_desc">You have to reach the target number with simple math operations starting from 0. App works like a calculator, you select the number and you can concatenate simple math operations to achieve your goal!  </string>
 
     <string name="connection_fail">Connection has not been opened</string>
 
     <string name="snake">Snake</string>
     <string name="minesweeper">Minesweeper</string>
-    <string name="flagquiz">Flag Quiz</string>
+    <string name="flagQuiz">Flag Quiz</string>
+    <string name="mathQuiz">Math Quiz</string>
 
     <string name="snake_pres">Snake is the common name for a video game concept where the player maneuvers a line which grows in length, with the line itself being a primary obstacle. The concept originated in the 1976 arcade game Blockade, and the ease of implementing Snake has led to hundreds of versions (some of which have the word snake or worm in the title) for many platforms. After a variant was preloaded on Nokia mobile phones in 1998, there was a resurgence of interest in the snake concept as it found a larger audience. There are over 300 Snake-like games for iOS alone.</string>
     <string name="mine_pres">Minesweeper is a single-player puzzle video game. The objective of the game is to clear a rectangular board containing hidden \"mines\" or bombs without detonating any of them, with help from clues about the number of neighboring mines in each field. The game originates from the 1960s, and has been written for many computing platforms in use today. It has many variations and offshoots.</string>
-    <string name="tetris_pres">Tetris is a tile-matching puzzle video game originally designed and programmed by Soviet Russian software engineer Alexey Pajitnov. The first playable version was completed on June 6, 1984, while he was working for the Dorodnitsyn Computing Centre of the Academy of Sciences of the Soviet Union in Moscow. He derived its name from combining the Greek numerical prefix tetra- (the falling pieces contain 4 segments) and tennis, Pajitnov\'s favorite sport. The name is also used in-game to refer to the play where four lines are cleared at once.</string>
+    <string name="math_pres">Test your Math ability with this game! You have to reach the target value in the less time possible.</string>
     <string name="flag_pres">Quiz where you will find the right Flag for the night nation.</string>
 
     <string name="cont">Continue</string>
     <string name="restart">Restart</string>
     <string name="exit">Exit</string>
 
-    <string name="yes">Yes</string>
-    <string name="play_again">No, i want to play again</string>
-    <string name="quit">No, i want to quit</string>
+    <string name="yes">Yes.</string>
+    <string name="play_again">No, i want to play again.</string>
+    <string name="quit">No, i want to quit.</string>
 
     <string name="reach">You reached score: </string>
     <string name="save"> Do you want to save it?</string>
@@ -74,23 +76,6 @@ Clicking a square which doesn\'t have a bomb reveals the number of neighbouring 
     <string-array name="optionsTheme">
         <item>Light</item>
         <item>Dark</item>
-    </string-array>
-
-    <string-array name="optionsControls">
-        <item>Four Direction</item>
-        <item>Snake Oriented</item>
-    </string-array>
-
-    <string-array name="optionsView">
-        <item>Modern</item>
-        <item>Classic</item>
-    </string-array>
-
-    <string-array name="optionsSpeed">
-        <item>Slow</item>
-        <item>Normal</item>
-        <item>Fast</item>
-        <item>Extreme</item>
     </string-array>
 
     <string name="menu_home">Home</string>

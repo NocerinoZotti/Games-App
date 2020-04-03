@@ -1,250 +1,382 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/AppBar"
-        android:layout_width="wrap_content"
+        android:id="@+id/appBarLayout2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_optimizationLevel="barrier">
+
+        <include
+            android:id="@+id/tb"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </com.google.android.material.appbar.AppBarLayout>
+
 
     <RelativeLayout
         android:id="@+id/wholescreen"
         style="@style/base.mainRelativeLayoutH"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/darkestgray">
+        android:layout_height="0dp"
+        android:background="@color/darkestgray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout2">
 
         <TextView
             android:id="@+id/targetnumberlabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dip"
-            android:foregroundGravity="right"
-            android:gravity="right"
+            style="@style/base.label"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="5dp"
             android:text="@string/targetnumberlabel"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/targetnumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:layout_toRightOf="@id/targetnumberlabel"
-            android:foregroundGravity="right"
-            android:gravity="right"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp" />
-
-        <TextView
             android:id="@+id/currentsumlabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/base.label"
             android:layout_below="@id/targetnumberlabel"
-            android:foregroundGravity="right"
-            android:gravity="right"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="5dp"
             android:text="@string/currentsumlabel"
             android:textSize="18sp" />
 
         <TextView
             android:id="@+id/currentnumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/base.number"
             android:layout_below="@id/targetnumber"
-            android:layout_marginTop="18dip"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="25dp"
             android:layout_toRightOf="@id/currentsumlabel"
-            android:foregroundGravity="right"
-            android:gravity="right"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/elapsedtimelabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/currentsumlabel"
-            android:gravity="right"
-            android:text="@string/elapsedtimelabel"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/elapsedtime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/elapsedtimelabel"
-            android:foregroundGravity="right"
-            android:gravity="right"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
         <Button
             android:id="@+id/movingBttn1"
             style="@style/base.flock"
-            android:layout_marginLeft="25dip"
-            android:layout_marginTop="25dip"
+            android:layout_marginStart="330dp"
+            android:layout_marginTop="-75dip"
+            android:layout_marginEnd="120dp"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/elapsedtimelabel"
+            style="@style/base.label"
+            android:layout_below="@id/currentsumlabel"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/elapsedtimelabel"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/elapsedtime"
+            style="@style/base.number"
+            android:layout_width="50dp"
+            android:layout_above="@id/movingBttn1"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="7dp"
+            android:layout_toRightOf="@id/elapsedtimelabel"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/targetnumber"
+            style="@style/base.number"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="25dp"
+            android:layout_toRightOf="@id/targetnumberlabel"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
 
         <Button
             android:id="@+id/movingBttn2"
             style="@style/base.flock"
-            android:layout_marginLeft="75dip"
-            android:layout_marginTop="25dip"
+            android:layout_marginStart="400dp"
+            android:layout_marginTop="-75dip"
+            android:layout_marginEnd="120dp"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/movingBttn3"
             style="@style/base.flock"
-            android:layout_marginLeft="125dip"
-            android:layout_marginTop="25dip"
+            android:layout_marginStart="470dp"
+            android:layout_marginTop="-75dip"
+            android:layout_marginEnd="90dp"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/movingBttn4"
             style="@style/base.flock"
-            android:layout_marginLeft="175dip"
-            android:layout_marginTop="25dip"
+            android:layout_marginStart="540dp"
+            android:layout_marginTop="-75dip"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/movingBttn5"
             style="@style/base.flock"
-            android:layout_marginLeft="25dip"
-            android:layout_marginTop="75dip"
+            android:layout_marginStart="330dp"
+            android:layout_marginTop="-25dip"
+            android:layout_marginEnd="120dp"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/movingBttn6"
             style="@style/base.flock"
-            android:layout_marginLeft="75dip"
-            android:layout_marginTop="75dip"
+            android:layout_marginStart="400dp"
+            android:layout_marginTop="-25dip"
+            android:layout_marginEnd="120dp"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/movingBttn7"
             style="@style/base.flock"
-            android:layout_marginLeft="125dip"
-            android:layout_marginTop="75dip"
+            android:layout_marginStart="470dp"
+            android:layout_marginTop="-25dip"
+            android:layout_marginEnd="90dp"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/movingBttn8"
             style="@style/base.flock"
-            android:layout_marginLeft="175dip"
-            android:layout_marginTop="75dip"
+            android:layout_marginStart="540dp"
+            android:layout_marginTop="-25dip"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/movingBttn9"
             style="@style/base.flock"
-            android:layout_marginLeft="25dip"
-            android:layout_marginTop="125dip"
+            android:layout_marginStart="330dp"
+            android:layout_marginTop="25dip"
+            android:layout_marginEnd="120dp"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/movingBttn10"
             style="@style/base.flock"
-            android:layout_marginLeft="75dip"
-            android:layout_marginTop="125dip"
+            android:layout_marginStart="400dp"
+            android:layout_marginTop="25dip"
+            android:layout_marginEnd="120dp"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/movingBttn11"
             style="@style/base.flock"
-            android:layout_marginLeft="125dip"
-            android:layout_marginTop="125dip"
+            android:layout_marginStart="470dp"
+            android:layout_marginTop="25dip"
+            android:layout_marginEnd="90dp"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/movingBttn12"
             style="@style/base.flock"
-            android:layout_marginLeft="175dip"
-            android:layout_marginTop="125dip"
+            android:layout_marginStart="540dp"
+            android:layout_marginTop="25dip"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
 
         <Button
             android:id="@+id/movingBttn13"
             style="@style/base.flock"
-            android:layout_marginLeft="25dip"
-            android:layout_marginTop="175dip"
+            android:layout_marginStart="330dp"
+            android:layout_marginTop="70dip"
+            android:layout_marginEnd="120dp"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/movingBttn14"
             style="@style/base.flock"
-            android:layout_marginLeft="75dip"
-            android:layout_marginTop="175dip"
+            android:layout_marginStart="400dp"
+            android:layout_marginTop="70dip"
+            android:layout_marginEnd="120dp"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/movingBttn15"
             style="@style/base.flock"
-            android:layout_marginLeft="125dip"
-            android:layout_marginTop="175dip"
+            android:layout_marginStart="470dp"
+            android:layout_marginTop="70dip"
+            android:layout_marginEnd="90dp"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/movingBttn16"
             style="@style/base.flock"
-            android:layout_marginLeft="175dip"
-            android:layout_marginTop="175dip"
+            android:layout_marginStart="540dp"
+            android:layout_marginTop="70dip"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
 
         <Button
             android:id="@+id/movingBttn17"
             style="@style/base.flock"
-            android:layout_marginLeft="25dip"
-            android:layout_marginTop="225dip"
+            android:layout_marginStart="330dp"
+            android:layout_marginTop="115dip"
+            android:layout_marginEnd="120dp"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
 
         <Button
             android:id="@+id/movingBttn18"
             style="@style/base.flock"
-            android:layout_marginLeft="75dip"
-            android:layout_marginTop="225dip"
+            android:layout_marginStart="400dp"
+            android:layout_marginTop="115dip"
+            android:layout_marginEnd="120dp"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/movingBttn19"
             style="@style/base.flock"
-            android:layout_marginLeft="125dip"
-            android:layout_marginTop="225dip"
+            android:layout_marginStart="470dp"
+            android:layout_marginTop="115dip"
+            android:layout_marginEnd="90dp"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/movingBttn20"
             style="@style/base.flock"
-            android:layout_marginLeft="175dip"
-            android:layout_marginTop="225dip"
+            android:layout_marginStart="540dp"
+            android:layout_marginTop="115dip"
+            android:textAlignment="center"
             android:textColor="#FFFFFF" />
 
+
+        <Button
+            android:id="@+id/addition"
+            style="@style/base.bttn.math.addition"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="false"
+            android:layout_marginStart="550dp"
+            android:layout_marginTop="25dp"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/additionarrow"
             style="@style/base.arrow.addition"
+            android:layout_alignParentTop="false"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginEnd="15dp"
             android:visibility="gone" />
+
+        <Button
+            android:id="@+id/subtraction"
+            style="@style/base.bttn.math.subtraction"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="false"
+            android:layout_marginStart="500dp"
+            android:layout_marginTop="25dp"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/subtractionarrow"
             style="@style/base.arrow.subtraction"
+            android:layout_alignParentTop="false"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginEnd="15dp"
             android:visibility="gone" />
+
+        <Button
+            android:id="@+id/multiplication"
+            style="@style/base.bttn.math.multiplication"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="false"
+            android:layout_marginStart="450dp"
+            android:layout_marginTop="25dp"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/multiplicationarrow"
             style="@style/base.arrow.multiplication"
+            android:layout_alignParentTop="false"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginEnd="15dp"
             android:visibility="gone" />
+
+        <Button
+            android:id="@+id/division"
+            style="@style/base.bttn.math.division"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="false"
+            android:layout_marginStart="400dp"
+            android:layout_marginTop="25dp"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/divisionarrow"
             style="@style/base.arrow.division"
+            android:layout_alignParentTop="false"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="2.5dp"
+            android:layout_marginEnd="15dp"
             android:visibility="gone" />
+
+        <Button
+            android:id="@+id/square"
+            style="@style/base.bttn.math.square"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="false"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="25dp"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/cube"
+            style="@style/base.bttn.math.cube"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="false"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="25dp"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/squareroot"
+            style="@style/base.bttn.math.squareroot"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="false"
+            android:layout_marginStart="350dp"
+            android:layout_marginTop="25dp"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/mathmath"
@@ -254,48 +386,10 @@
         <Button
             android:id="@+id/newgame"
             style="@style/base.newgame"
-            android:textColor="#FFFFFF" />
-
-        <Button
-            android:id="@+id/squareroot"
-            style="@style/base.bttn.math.squareroot"
-            android:textColor="#FFFFFF" />
-
-        <include
-            android:id="@+id/tb"
-            layout="@layout/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true" />
-
-        <Button
-            android:id="@+id/addition"
-            style="@style/base.bttn.math.addition"
-            android:textColor="#FFFFFF" />
-
-        <Button
-            android:id="@+id/subtraction"
-            style="@style/base.bttn.math.subtraction"
-            android:textColor="#FFFFFF" />
-
-        <Button
-            android:id="@+id/multiplication"
-            style="@style/base.bttn.math.multiplication"
-            android:textColor="#FFFFFF" />
-
-        <Button
-            android:id="@+id/division"
-            style="@style/base.bttn.math.division"
-            android:textColor="#FFFFFF" />
-
-        <Button
-            android:id="@+id/square"
-            style="@style/base.bttn.math.square"
-            android:textColor="#FFFFFF" />
-
-        <Button
-            android:id="@+id/cube"
-            style="@style/base.bttn.math.cube"
+            android:layout_alignStart="@id/movingBttn1"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="30dip"
+            android:layout_marginTop="250dp"
             android:textColor="#FFFFFF" />
 
         <TextView
@@ -314,4 +408,4 @@
             android:visibility="gone" />
 
     </RelativeLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

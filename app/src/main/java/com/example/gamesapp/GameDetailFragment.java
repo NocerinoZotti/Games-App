@@ -71,7 +71,7 @@ public class GameDetailFragment extends Fragment {
                 ((TextView) rootView.findViewById(R.id.game_detail)).setText(R.string.mine_pres);
                 break;
             case "2":
-                ((TextView) rootView.findViewById(R.id.game_detail)).setText(R.string.tetris_pres);
+                ((TextView) rootView.findViewById(R.id.game_detail)).setText(R.string.math_pres);
                 break;
             case "3":
                 ((TextView) rootView.findViewById(R.id.game_detail)).setText(R.string.flag_pres);

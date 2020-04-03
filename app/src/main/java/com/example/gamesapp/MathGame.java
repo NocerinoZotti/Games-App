@@ -1,5 +1,10 @@
 package com.example.gamesapp;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -7,16 +12,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
+
+import static java.lang.Integer.getInteger;
+import static java.lang.Integer.parseInt;
 
 public class MathGame extends AppCompatActivity {
 
     private Handler mHandler = new Handler();
     private long mStartTime;
+    private int score;
     final static String youwon1 = ":)";
     final static String youwon2 = "you";
     final static String youwon3 = "won";
@@ -45,6 +57,17 @@ public class MathGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mathgame);
         splash(null);
+        ImageButton info = (ImageButton)findViewById(R.id.button_play);
+
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder myAlert = new AlertDialog.Builder(MathGame.this);
+                myAlert.setTitle(R.string.tutorial);
+                myAlert.setMessage(R.string.math_desc);
+                myAlert.show();
+            }
+        });
     }
 
     @Override
@@ -737,8 +760,16 @@ public class MathGame extends AppCompatActivity {
     public void eyewon(View view) {
         final TextView targetNumber = (TextView)findViewById(R.id.targetnumber);
         final TextView currentNumber = (TextView)findViewById(R.id.currentnumber);
+        final TextView mTime = (TextView)findViewById(R.id.elapsedtime);
         if (Integer.parseInt((String) currentNumber.getText()) == Integer.parseInt((String) targetNumber.getText()))
-        { youWonToggle(true); mHandler.removeCallbacks(mUpdateTimeTask);}
+        {   youWonToggle(true);
+            mHandler.removeCallbacks(mUpdateTimeTask);
+            String time = mTime.getText().toString();
+            String[] gameTime= time.split(":");
+            score = 1003 - ((parseInt(gameTime[0])*22 + (parseInt(gameTime[1]) )) * 3);
+            if (score>0)
+                recordScore(score, "Math Game", this);
+        }
     }
 
     public void hitceiling() {
@@ -753,6 +784,68 @@ public class MathGame extends AppCompatActivity {
             condition1(1);
             condition1(15);
         } else { acceptInput = true;}
+    }
+
+    public void recordScore(final int score, final String game, final Context context){
+        final CharSequence[] choice = {getResources().getString(R.string.yes),getResources().getString(R.string.play_again), getResources().getString(R.string.quit)};
+        final AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle(getResources().getString(R.string.reach)+score+".\n"+getResources().getString(R.string.save));
+        builder.setItems(choice, new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int item) {
+                switch(item){
+                    // Save the result
+                    case 0:
+                        builder.setMessage(getResources().getString(R.string.username));
+                        final EditText input = new EditText(context);
+                        builder.setView(input);
+                        builder.setPositiveButton(getResources().getString(R.string.confirm), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                String username = input.getText().toString();
+                                DBHelper db = new DBHelper(context);
+                                db.open();
+                                db.insertRow(username, game, score);
+                                db.close();
+                                final CharSequence[] items = {getResources().getString(R.string.restart),getResources().getString(R.string.exit)};
+                                AlertDialog.Builder build = new AlertDialog.Builder(builder.getContext());
+                                build.setTitle(getResources().getString(R.string.saveDone));
+                                build.setItems(items, new DialogInterface.OnClickListener() {
+
+                                    public void onClick(DialogInterface dialog, int item) {
+                                        switch(item){
+                                            // Play Again
+                                            case 0:
+                                                return;
+                                            // Go Back
+                                            default:
+                                                Activity a =(Activity) context;
+                                                a.finish();
+                                        }
+                                    }
+                                });
+
+                                build.setCancelable(false);
+                                build.create().show();
+                            }
+                        });
+                        builder.setNegativeButton(getResources().getString(R.string.back), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                // what ever you want to do with No option.
+                            }
+                        });
+                        builder.show();
+                        break;
+                    case 1:
+                        break;
+                    // Don't save
+                    default:
+                        Activity a =(Activity) context;
+                        a.finish();
+                }
+            }
+        });
+
+        builder.create().show();
     }
 
 
