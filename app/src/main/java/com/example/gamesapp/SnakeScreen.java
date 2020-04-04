@@ -137,6 +137,7 @@ public class SnakeScreen extends AppCompatActivity {
                                 DBHelper db = new DBHelper(SnakeScreen.this);
                                 db.open();
                                 db.insertRow(username,"Snake", snakeGame.getScore());
+                                db.insertOnline(username,"Snake", snakeGame.getScore());
                                 db.close();
                                 final CharSequence[] items = {getResources().getString(R.string.restart),getResources().getString(R.string.exit)};
                                 AlertDialog.Builder build = new AlertDialog.Builder(builder.getContext());

@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class DBHelper {
 
     static final String KEY_ID = "id";
@@ -17,10 +20,11 @@ public class DBHelper {
     static final String DATABASE_NAME = "TestDB";
     static final String DATABASE_TABLE = "Ranking";
     static final int DATABASE_VERSION = 1;
-
     static final String RANKING_TABLE =
             "CREATE TABLE ranking (id integer primary key autoincrement, "
                     + "username text not null, game text not null, points integer not null);";
+
+    DatabaseReference onlineDb = FirebaseDatabase.getInstance().getReference();
 
     final Context context;
     DatabaseHelper DBHelper;
@@ -83,10 +87,22 @@ public class DBHelper {
         return db.insert(DATABASE_TABLE, null, initialValues);
     }
 
+    public void insertOnline(String username, String game, Integer points)
+    {
+        Score score = new Score(username, game, points);
+        String userId = onlineDb.push().getKey();
+        onlineDb.child(userId).setValue(score);
+    }
+
 
     public boolean deleteRow(long rowId)
     {
         return db.delete(DATABASE_TABLE, KEY_ID + "=" + rowId, null) > 0;
+    }
+
+    public void deleteAll()
+    {
+        db.delete(DATABASE_TABLE, null, null);
     }
 
 

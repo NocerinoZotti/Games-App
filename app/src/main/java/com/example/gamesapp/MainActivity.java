@@ -6,17 +6,29 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences userPreferences;
+    DatabaseReference onlineDb;
+    List<Score> scoreList;
+    DBHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
         int theme = userPreferences.getInt("theme",0);
         int language = userPreferences.getInt("language",0);
         final int game  = userPreferences.getInt("game",0);
+
+        onlineDb = FirebaseDatabase.getInstance().getReference();
+        scoreList = new ArrayList<>();
+        db = new DBHelper(this);
 
         if(theme == 1) setTheme(R.style.AppThemeDark);
         if (language==1) {
@@ -85,6 +101,33 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startFavGame(game);
+            }
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        onlineDb.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                scoreList.clear();
+                for (DataSnapshot scoreSnapshot : dataSnapshot.getChildren()) {
+                    Score score = scoreSnapshot.getValue(Score.class);
+                    scoreList.add(score);
+                }
+
+                db.open();
+                db.deleteAll();
+                for (Score score : scoreList) {
+                    db.insertRow(score.username, score.game, score.points);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
     }

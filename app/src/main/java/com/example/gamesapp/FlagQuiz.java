@@ -417,6 +417,7 @@ public class FlagQuiz extends AppCompatActivity {
                                 DBHelper db = new DBHelper(context);
                                 db.open();
                                 db.insertRow(username, game, score);
+                                db.insertOnline(username, game, score);
                                 db.close();
                                 final CharSequence[] items = {getResources().getString(R.string.restart),getResources().getString(R.string.exit)};
                                 AlertDialog.Builder build = new AlertDialog.Builder(builder.getContext());
