@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name">GamesApp</string>
     <string name="title_activity_launcher">GamesApp</string>
-    <string name="action_settings">Play</string>
+    <string name="action_settings" translatable="false">Play</string>
     <string name="title_game_list">Games</string>
     <string name="title_game_detail">Game Detail</string>
-    <string name="title_activity_main">Launcher</string>
+    <string name="title_activity_main" translatable="false">Launcher</string>
 
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
@@ -19,21 +19,20 @@
         <item>Flag Quiz</item>
     </string-array>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
 
-    <string name="options">Snake Options</string>
-    <string name="optionsButton">Options</string>
     <string name="begin">Start</string>
     <string name="gameOver">Game Over</string>
     <string name="paused">Paused</string>
     <string name="theme">Theme</string>
-    <string name="controls">Controls</string>
-    <string name="viewMode">View Mode</string>
-    <string name="speed">Speed</string>
     <string name="back">Back</string>
+    <string name="settings">Settings</string>
+    <string name="language">Language</string>
+    <string name="favourite">Favourite Game</string>
+    <string name="usernamePreference">Username Preference</string>
 
-    <string name="tutorial">Tutorial</string>
+    <string name="tutorial" translatable="false">Tutorial</string>
     <string name="snake_desc">
 The snake moves at a constant speed only in north, south, east, or west direction. "Apples" appear at random locations and when the snake "eats" (runs into) an apple, it gets longer.
 The game continues until the snake "dies". by either running into the edge of the board, or by running into its own tail.
@@ -47,10 +46,10 @@ Clicking a square which doesn\'t have a bomb reveals the number of neighbouring 
 
     <string name="connection_fail">Connection has not been opened</string>
 
-    <string name="snake">Snake</string>
-    <string name="minesweeper">Minesweeper</string>
-    <string name="flagQuiz">Flag Quiz</string>
-    <string name="mathQuiz">Math Quiz</string>
+    <string name="snake" translatable="false">Snake</string>
+    <string name="minesweeper" translatable="false">Minesweeper</string>
+    <string name="flagQuiz" translatable="false">Flag Quiz</string>
+    <string name="mathQuiz" translatable="false">Math Quiz</string>
 
     <string name="snake_pres">Snake is the common name for a video game concept where the player maneuvers a line which grows in length, with the line itself being a primary obstacle. The concept originated in the 1976 arcade game Blockade, and the ease of implementing Snake has led to hundreds of versions (some of which have the word snake or worm in the title) for many platforms. After a variant was preloaded on Nokia mobile phones in 1998, there was a resurgence of interest in the snake concept as it found a larger audience. There are over 300 Snake-like games for iOS alone.</string>
     <string name="mine_pres">Minesweeper is a single-player puzzle video game. The objective of the game is to clear a rectangular board containing hidden \"mines\" or bombs without detonating any of them, with help from clues about the number of neighboring mines in each field. The game originates from the 1960s, and has been written for many computing platforms in use today. It has many variations and offshoots.</string>
@@ -78,7 +77,7 @@ Clicking a square which doesn\'t have a bomb reveals the number of neighbouring 
         <item>Dark</item>
     </string-array>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_home" translatable="false">Home</string>
     <string name="welcome">"Welcome!"</string>
 
     <string name="choices">Select Number of Choices</string>
@@ -90,7 +89,7 @@ Clicking a square which doesn\'t have a bomb reveals the number of neighbouring 
     <string name="more_regions_message">There are not enough countries in
       the selected regions. Please select more regions.</string>
     <string name="of">of</string>
-    <string name="ok">OK</string>
+    <string name="ok" translatable="false">OK</string>
     <string name="question">Question</string>
     <string name="quiz_title">Ten Question Flag Quiz</string>
     <string name="regions">Select Regions</string>
@@ -108,27 +107,31 @@ Clicking a square which doesn\'t have a bomb reveals the number of neighbouring 
         <item>6</item>
         <item>9</item>
     </string-array>
+    <string-array name="languagesList">
+        <item>English</item>
+        <item>Italian</item>
+    </string-array>
 
     <string name="currentoperatorlabel">CURRENT OPERATOR:</string>
     <string name="targetnumberlabel">TARGET NUMBER:</string>
     <string name="currentsumlabel">CURRENT TOTAL:</string>
     <string name="elapsedtimelabel">ELAPSED TIME:</string>
-    <string name="addition">\u002B</string>
-    <string name="subtraction">\u2212</string>
-    <string name="multiplication">\u00D7</string>
-    <string name="division">\u00F7</string>
-    <string name="squareold">\u25FB</string>
-    <string name="square">x\u00B2</string>
-    <string name="cube">y\u00B3</string>
-    <string name="squareroot">\u221A</string>
-    <string name="arrow">\u2190</string>
-    <string name="flocktext">0</string>
-    <string name="splashpage_title">MATH:MATH</string>
-    <string name="author_email">app by this.is.lance.miller@gmail.com</string>
-    <string name="newgame">NEW GAME</string>
-    <string name="linktoblog">more info@
+    <string name="addition" translatable="false">\u002B</string>
+    <string name="subtraction" translatable="false">\u2212</string>
+    <string name="multiplication" translatable="false">\u00D7</string>
+    <string name="division" translatable="false">\u00F7</string>
+    <string name="squareold" translatable="false">\u25FB</string>
+    <string name="square" translatable="false">x\u00B2</string>
+    <string name="cube" translatable="false">y\u00B3</string>
+    <string name="squareroot" translatable="false">\u221A</string>
+    <string name="arrow" translatable="false">\u2190</string>
+    <string name="flocktext" translatable="false">0</string>
+    <string name="splashpage_title" translatable="false">MATH:MATH</string>
+    <string name="author_email" translatable="false">app by this.is.lance.miller@gmail.com</string>
+    <string name="newgame" translatable="false">NEW GAME</string>
+    <string name="linktoblog" translatable="false">more info@
 		http://math-math-android-app.blogspot.com</string>
-    <string name="copyright">\u00A9</string>
-    <string name="quote"><i>Arithmetic is where numbers fly like pigeons in and out of your head.</i> ~Sandburg</string>
-    <string name="flagQuizDescription">\nQuiz where you will find the right Flag for the night nation.</string>
+    <string name="copyright" translatable="false">\u00A9</string>
+    <string name="quote" translatable="false"><i>Arithmetic is where numbers fly like pigeons in and out of your head.</i> ~Sandburg</string>
+    <string name="apply">apply</string>
 </resources>

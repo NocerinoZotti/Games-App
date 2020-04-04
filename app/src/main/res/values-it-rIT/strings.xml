@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AppGiochi</string>
+    <string name="title_game_list">Giochi</string>
+    <string name="title_activity_launcher" translatable="false">AppGiochi</string>
+    <string name="title_game_detail" translatable="false">Info Gioco</string>
+    <string name="next">Prossimo</string>
+    <string name="previous">Precedente</string>
+    <string name="begin">Inizia</string>
+    <string name="gameOver">Hai perso</string>
+    <string name="paused">In pausa</string>
+    <string name="theme">Tema</string>
+    <string name="back">Indietro</string>
+    <string name="settings">Opzioni</string>
+    <string name="language">Lingua</string>
+    <string name="favourite">Gioco Preferito</string>
+    <string name="usernamePreference">Username predefinito</string>
+    <string name="connection_fail">Connessione Fallita</string>
+    <string name="cont">Continua</string>
+    <string name="restart">Riavvia</string>
+    <string name="exit">Esci</string>
+    <string name="yes">Si.</string>
+    <string name="play_again">No, voglio giocare ancora.</string>
+    <string name="quit">No, voglio uscire.</string>
+    <string name="reach">Hai raggiunto il punteggio:</string>
+    <string name="save">Vuoi salvare?</string>
+    <string name="username">Inserisci il tuo username</string>
+    <string name="confirm">Conferma</string>
+    <string name="play_again_button">Gioca ancora</string>
+    <string name="saveDone">Il tuo punteggio è stato salvato! Cosa vuoi fae ancora?</string>
+    <string name="welcome">Benvenuto!</string>
+    <string name="choices">Seleziona numero di scelte</string>
+    <string name="correct">Ok</string>
+    <string name="guess_country">Indovina la nazione</string>
+    <string name="guesses">sono state tentate</string>
+    <string name="incorrect_answer">Sbagliato!</string>
+    <string name="of">di</string>
+    <string name="question">Domande</string>
+    <string name="quiz_title">Quiz sulle Bandiere</string>
+    <string name="regions">Seleziona Paesi</string>
+    <string name="your_score">Il tuo punteggio di questa partita:</string>
+    <string name="flagQuizDescription">Quiz dove sarà testata la tua conoscenza in ambito di bandiere internazionali. Mettiti alla prova per saperlo!</string>
+    <string name="apply">Applica</string>
+    <string name="currentoperatorlabel">OPERAZIONE ATTUALE:</string>
+    <string name="targetnumberlabel">NUMERO TARGET:</string>
+    <string name="currentsumlabel">ATTUALE TOTALE:</string>
+    <string name="elapsedtimelabel">TEMPO DI GIOCO:</string>
+</resources>
