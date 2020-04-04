@@ -27,6 +27,7 @@
     <string name="paused">Paused</string>
     <string name="theme">Theme</string>
     <string name="back">Back</string>
+    <string name="rankings">Rankings</string>
     <string name="settings">Settings</string>
     <string name="language">Language</string>
     <string name="favourite">Favourite Game</string>
@@ -109,7 +110,7 @@ Clicking a square which doesn\'t have a bomb reveals the number of neighbouring 
     </string-array>
     <string-array name="languagesList">
         <item>English</item>
-        <item>Italian</item>
+        <item>Italiano</item>
     </string-array>
 
     <string name="currentoperatorlabel">CURRENT OPERATOR:</string>
@@ -134,4 +135,9 @@ Clicking a square which doesn\'t have a bomb reveals the number of neighbouring 
     <string name="copyright" translatable="false">\u00A9</string>
     <string name="quote" translatable="false"><i>Arithmetic is where numbers fly like pigeons in and out of your head.</i> ~Sandburg</string>
     <string name="apply">apply</string>
+    <string name="app_desc">"Welcome on our app, enjoy your games! In this app you can find different games and you can share your scores with our community. "</string>
+    <string name="sett_desc">Customize your app selecting theme, language, favorite game and default username.</string>
+    <string name="rank_desc">You can find the best score achieved on this view. You can select the game you want to check and discover if you are in!</string>
+    <string name="list_desc">List of the games avaiable, check the game to find the infos about it!</string>
+    <string name="select_game">First select a game to play it!</string>
 </resources>

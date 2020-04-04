@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name">AppGiochi</string>
     <string name="title_game_list">Giochi</string>
-    <string name="title_activity_launcher" translatable="false">AppGiochi</string>
     <string name="title_game_detail" translatable="false">Info Gioco</string>
     <string name="next">Prossimo</string>
     <string name="previous">Precedente</string>
@@ -27,7 +26,7 @@
     <string name="username">Inserisci il tuo username</string>
     <string name="confirm">Conferma</string>
     <string name="play_again_button">Gioca ancora</string>
-    <string name="saveDone">Il tuo punteggio è stato salvato! Cosa vuoi fae ancora?</string>
+    <string name="saveDone">Il tuo punteggio è stato salvato! Cosa vuoi fare adesso?</string>
     <string name="welcome">Benvenuto!</string>
     <string name="choices">Seleziona numero di scelte</string>
     <string name="correct">Ok</string>
@@ -39,10 +38,28 @@
     <string name="quiz_title">Quiz sulle Bandiere</string>
     <string name="regions">Seleziona Paesi</string>
     <string name="your_score">Il tuo punteggio di questa partita:</string>
-    <string name="flagQuizDescription">Quiz dove sarà testata la tua conoscenza in ambito di bandiere internazionali. Mettiti alla prova per saperlo!</string>
     <string name="apply">Applica</string>
     <string name="currentoperatorlabel">OPERAZIONE ATTUALE:</string>
     <string name="targetnumberlabel">NUMERO TARGET:</string>
     <string name="currentsumlabel">ATTUALE TOTALE:</string>
     <string name="elapsedtimelabel">TEMPO DI GIOCO:</string>
+    <string name="rankings">Classifiche</string>
+    <string name="app_desc">"Benvenuto nella nostra app e divertiti con i nostri giochi! In questa app troverai diversi giochi e condividere i tuoi migliori punteggi con la community! "</string>
+    <string name="sett_desc">Personalizza la tua app selezionando il tema, la lingua, il gioco preferito ed il nickname predefinito.</string>
+    <string name="rank_desc">In questa schermata trovi la classifica dei migliori risultati raggiunti.
+        Puoi scegliere il gioco che vuoi e vedere se sei tra i migliori!</string>
+    <string name="list_desc">Lista dei giochi disponibili, selezionane uno per scoprire di cosa si tratta!</string>
+    <string name="select_game">Prima seleziona un gioco per giocare!</string>
+    <string-array name="optionsTheme">
+        <item>Chiaro</item>
+        <item>Scuro</item>
+    </string-array>
+    <string name="flag_pres">"Quiz dove sarà testata la tua conoscenza in ambito di bandiere internazionali. Mettiti alla prova per saperlo! "</string>
+    <string name="math_pres">Prova le tue abilità di calcolo aritmetico con questo gioco! In questo gioco viene assegnato un casuale e starà al giocatore effettuare le giuste operazioni per arrivare al numero target assegnato dal gioco.</string>
+    <string name="snake_pres">Snake è un serpente che mangiando quello che appare sul display si allunga, e il giocatore guadagna dei punti. Si muove costantemente e deve evitare di andare a sbattere contro gli ostacoli, ma soprattutto contro sé stesso, cosa sempre più difficile man mano che il suo corpo si allunga.</string>
+    <string name="mine_pres">Minesweeper è un videogioco puzzle per giocatore singolo. L\'obiettivo del gioco è quello di sgombrare una tavola rettangolare contenente mine o bombe nascoste senza far esplodere nessuna di esse, con l\'aiuto di indizi sul numero di mine vicine in ciascun campo. Il gioco ha origine negli anni \'60 ed è stato scritto per molte piattaforme informatiche in uso oggi. Ha molte varianti e derivati.</string>
+    <string name="flag_desc">In questo quiz dovrai indovinare la nazione che viene simboleggiata dalla bandiera. Ti verranno proposte 6 opzioni in 10 domande di questo genere. Ogni tuo errore farà perdere del punteggio. La domanda sarà presentata fino a quando la risposta data sarà corretta.</string>
+    <string name="snake_desc">"Il serpente si muove a velocità costante solo in direzione nord, sud, est o ovest. Le mele appaiono in posizioni casuali e quando il serpente mangia (si imbatte in) una mela, si allunga. Il gioco continua fino alla morte del serpente. o correndo verso il bordo della scacchiera o correndo nella propria coda. Il punteggio finale si basa sul numero di mele mangiate dal serpente. Il serpente può essere controllato dai tasti freccia. In modalità orizzontale i controlli sono effettuati dal touchscreen. "</string>
+    <string name="mine_desc">"Ti viene presentato un tabellone di quadrati. Alcuni quadrati contengono mine, altri no. Se fai clic su un quadrato contenente una bomba, perdi. Se riesci a fare clic su tutti i quadrati (senza fare clic su alcuna bombe), vinci. Fare clic su un quadrato che non ha una bomba rivela il numero di quadrati vicini contenenti bombe. Usa queste informazioni e alcune congetture per evitare le bombe. "</string>
+    <string name="math_desc">"Devi raggiungere il numero target con semplici operazioni matematiche a partire da 0. L'app funziona come una calcolatrice, seleziona il numero e puoi concatenare semplici operazioni matematiche per raggiungere il tuo obiettivo! "</string>
 </resources>

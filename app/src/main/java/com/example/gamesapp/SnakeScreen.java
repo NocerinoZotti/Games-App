@@ -25,6 +25,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +33,9 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.google.android.material.textfield.TextInputEditText;
+
 import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -42,36 +46,24 @@ public class SnakeScreen extends AppCompatActivity {
     private FrameLayout frameView;
     private TextView score;
     private Activity mActivity;
-    SharedPreferences userPreferences, speedSetting;
+    SharedPreferences userPreferences;
     private boolean darkTheme=false,snakeOriented=false,classicMode=false;
-    private int speed;
     ImageButton info;
 
     // Initialize Game Screen
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
-        // Set Theme, Controls Mode, View Mode & Speed According to Settings
-        // Speed Setting is Stored in a Different File Because It Should Not Be Synced Across Devices
         userPreferences = getSharedPreferences("settings", 0);
-        speedSetting = getSharedPreferences("speed", 0);
         if(userPreferences.getInt("theme",0) == 1){
-            setTheme(android.R.style.Theme_Holo);
+            setTheme(R.style.AppThemeDark);
             darkTheme=true;
         }
-        if(userPreferences.getInt("view",0) == 1)  classicMode = true;
-        if(userPreferences.getInt("controls",0) == 1)  snakeOriented = true;
-        speed = speedSetting.getInt("speed", 0);
 
         // Create Game View & Add Handler to Current Activity
         super.onCreate(savedInstanceState);
-        if(snakeOriented)
-            setContentView(R.layout.snake);
-        else
-            setContentView(R.layout.snake);
-        mActivity = this;
-
         setContentView(R.layout.snake);
+        mActivity = this;
 
         Toolbar toolbar = findViewById(R.id.tb);
         setSupportActionBar(toolbar);
@@ -90,7 +82,7 @@ public class SnakeScreen extends AppCompatActivity {
 
         // Grab Score TextView Handle, Create Game Object & Add Game to Frame
         score = (TextView) findViewById(R.id.score);
-        snakeGame = new SnakeGame(this,this,score,darkTheme,classicMode,snakeOriented,speed);
+        snakeGame = new SnakeGame(this,this,score,darkTheme,classicMode,snakeOriented);
         frameView = (FrameLayout) findViewById(R.id.gameFrame);
         frameView.addView(snakeGame);
 
@@ -124,6 +116,8 @@ public class SnakeScreen extends AppCompatActivity {
     // Called from Game Object
     public void gameOver(){
 
+        final String username = userPreferences.getString("username", null);
+
         final CharSequence[] choice = {getResources().getString(R.string.yes),getResources().getString(R.string.play_again), getResources().getString(R.string.quit)};
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(getResources().getString(R.string.reach)+score.getText()+'\n'+getResources().getString(R.string.save));
@@ -134,7 +128,8 @@ public class SnakeScreen extends AppCompatActivity {
                     // Save the result
                     case 0:
                         builder.setMessage(getResources().getString(R.string.username));
-                        final EditText input = new EditText(SnakeScreen.this);
+                        final TextInputEditText input = new TextInputEditText(SnakeScreen.this);
+                        input.setText(username);
                         builder.setView(input);
                         builder.setPositiveButton(getResources().getString(R.string.confirm), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {

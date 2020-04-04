@@ -1,18 +1,19 @@
 package com.example.gamesapp;
 
+import java.util.Locale;
 import java.util.Random;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -21,6 +22,9 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.textfield.TextInputEditText;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -50,9 +54,27 @@ public class Minesweeper extends AppCompatActivity
     private boolean isGameOver;
     private int score=0;
 
+    SharedPreferences userPreferences;
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
+        // Grab Existing Preferences
+        userPreferences  = getSharedPreferences("settings", 0);
+        int theme = userPreferences.getInt("theme",0);
+        int language = userPreferences.getInt("language",0);
+
+        if(theme == 1) setTheme(R.style.AppThemeDark);
+        if (language==1) {
+            String languageToLoad  = "it";
+            Locale locale = new Locale(languageToLoad);
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config,
+                    getBaseContext().getResources().getDisplayMetrics());
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_minesweeper);
 
@@ -611,7 +633,10 @@ public class Minesweeper extends AppCompatActivity
                     // Save the result
                     case 0:
                         builder.setMessage(getResources().getString(R.string.username));
-                        final EditText input = new EditText(context);
+                        userPreferences  = getSharedPreferences("settings", 0);
+                        final String username = userPreferences.getString("username", null);
+                        final TextInputEditText input = new TextInputEditText(context);
+                        input.setText(username);
                         builder.setView(input);
                         builder.setPositiveButton(getResources().getString(R.string.confirm), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {

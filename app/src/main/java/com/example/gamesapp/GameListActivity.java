@@ -1,8 +1,11 @@
 package com.example.gamesapp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -20,12 +23,14 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.gamesapp.dummy.DummyContent;
 
 import java.util.List;
+import java.util.Locale;
 
 import static android.view.MotionEvent.ACTION_BUTTON_PRESS;
 import static androidx.core.view.MotionEventCompat.*;
@@ -42,6 +47,8 @@ import static com.example.gamesapp.GameDetailFragment.ARG_ITEM_ID;
  */
 public class GameListActivity extends AppCompatActivity {
 
+    SharedPreferences userPreferences;
+
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
@@ -50,12 +57,43 @@ public class GameListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        // Grab Existing Preferences
+        userPreferences  = getSharedPreferences("settings", 0);
+        int theme = userPreferences.getInt("theme",0);
+        int language = userPreferences.getInt("language",0);
+        final int game  = userPreferences.getInt("game",0);
+
+        // Set Dark Theme
+        if(theme == 1) setTheme(R.style.AppThemeDark);
+        if (language==1) {
+            String languageToLoad  = "it";
+            Locale locale = new Locale(languageToLoad);
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config,
+                    getBaseContext().getResources().getDisplayMetrics());
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_list);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.tb);
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
+
+        ImageButton info = findViewById(R.id.button_play);
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder myAlert = new AlertDialog.Builder(GameListActivity.this);
+                myAlert.setTitle(R.string.title_game_list);
+                myAlert.setMessage(R.string.list_desc);
+                myAlert.show();
+            }
+        });
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         if (findViewById(R.id.game_detail_container) != null) {
             // The detail container view will be present only in the
@@ -66,7 +104,7 @@ public class GameListActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
 
-                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                    Snackbar.make(view, R.string.select_game, Snackbar.LENGTH_LONG)
                                     .setAction("Action", null).show();
                 }});
 

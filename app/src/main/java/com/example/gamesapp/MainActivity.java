@@ -1,15 +1,18 @@
 package com.example.gamesapp;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,13 +27,33 @@ public class MainActivity extends AppCompatActivity {
         int language = userPreferences.getInt("language",0);
         final int game  = userPreferences.getInt("game",0);
 
-        // Set Dark Theme
         if(theme == 1) setTheme(R.style.AppThemeDark);
+        if (language==1) {
+            String languageToLoad  = "it";
+            Locale locale = new Locale(languageToLoad);
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config,
+                    getBaseContext().getResources().getDisplayMetrics());
+        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.tb);
         setSupportActionBar(toolbar);
+
+        ImageButton info = findViewById(R.id.button_play);
+
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder myAlert = new AlertDialog.Builder(MainActivity.this);
+                myAlert.setTitle(R.string.welcome);
+                myAlert.setMessage(R.string.app_desc);
+                myAlert.show();
+            }
+        });
 
         final Button games = findViewById(R.id.games);
         final Button ranking = findViewById(R.id.rankings);
@@ -109,4 +132,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+    
 }

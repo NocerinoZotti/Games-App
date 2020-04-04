@@ -1,11 +1,15 @@
 package com.example.gamesapp;
 
+import android.app.AlertDialog;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -23,6 +27,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Locale;
+
 import android.widget.AdapterView.*;
 
 public class RankingActivity extends AppCompatActivity {
@@ -31,8 +37,37 @@ public class RankingActivity extends AppCompatActivity {
     int selected=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        // Grab Existing Preferences
+        SharedPreferences userPreferences = getSharedPreferences("settings", 0);
+        int theme = userPreferences.getInt("theme",0);
+        int language = userPreferences.getInt("language",0);
+
+        if(theme == 1) setTheme(R.style.AppThemeDark);
+        if (language==1) {
+            String languageToLoad  = "it";
+            Locale locale = new Locale(languageToLoad);
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config,
+                    getBaseContext().getResources().getDisplayMetrics());
+        }
+        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
+
+        ImageButton info = findViewById(R.id.button_play);
+
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder myAlert = new AlertDialog.Builder(RankingActivity.this);
+                myAlert.setTitle(R.string.rankings);
+                myAlert.setMessage(R.string.rank_desc);
+                myAlert.show();
+            }
+        });
     }
 
     @Override

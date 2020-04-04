@@ -37,7 +37,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="45dp"
         android:paddingBottom="2dip"
-        android:textColor="@color/secondaryTextColor"
+        android:textColor="?android:textColorPrimary"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@id/pos"
         app:layout_constraintTop_toTopOf="parent" />
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="330dp"
         android:layout_marginTop="50dp"
-        android:textColor="@color/secondaryTextColor"
+        android:textColor="?android:textColorPrimary"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

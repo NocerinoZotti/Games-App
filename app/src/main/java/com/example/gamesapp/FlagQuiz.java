@@ -6,7 +6,9 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.content.res.AssetManager;
+import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,12 +26,16 @@ import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+
+import com.google.android.material.textfield.TextInputEditText;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
@@ -53,9 +59,28 @@ public class FlagQuiz extends AppCompatActivity {
     private TableLayout buttonTableLayout;
     private ImageButton info;
 
+    SharedPreferences userPreferences;
+
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
+        // Grab Existing Preferences
+        userPreferences  = getSharedPreferences("settings", 0);
+        int theme = userPreferences.getInt("theme",0);
+        int language = userPreferences.getInt("language",0);
+
+        if(theme == 1) setTheme(R.style.AppThemeDark);
+        if (language==1) {
+            String languageToLoad  = "it";
+            Locale locale = new Locale(languageToLoad);
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config,
+                    getBaseContext().getResources().getDisplayMetrics());
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flag_quiz);
 
@@ -381,7 +406,10 @@ public class FlagQuiz extends AppCompatActivity {
                     // Save the result
                     case 0:
                         builder.setMessage(getResources().getString(R.string.username));
-                        final EditText input = new EditText(context);
+                        userPreferences  = getSharedPreferences("settings", 0);
+                        final String username = userPreferences.getString("username", null);
+                        final TextInputEditText input = new TextInputEditText(context);
+                        input.setText(username);
                         builder.setView(input);
                         builder.setPositiveButton(getResources().getString(R.string.confirm), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {

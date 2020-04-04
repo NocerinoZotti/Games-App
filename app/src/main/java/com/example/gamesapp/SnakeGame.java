@@ -43,7 +43,7 @@ public class SnakeGame extends View {
     private int score,frameRate;
     private boolean darkTheme,classicMode,snakeOriented;
 
-    public SnakeGame(Context context, SnakeScreen activity, TextView scoreView, boolean darkTheme, boolean classicMode, boolean snakeOriented, int speed) {
+    public SnakeGame(Context context, SnakeScreen activity, TextView scoreView, boolean darkTheme, boolean classicMode, boolean snakeOriented) {
         super(context);
         mActivity = activity;
         random = new Random();
@@ -51,7 +51,7 @@ public class SnakeGame extends View {
         this.darkTheme = darkTheme;
         this.classicMode = classicMode;
         this.snakeOriented = snakeOriented;
-        this.frameRate = 5*(speed+1);
+        this.frameRate = 5;
     }
 
     // If User Scores
