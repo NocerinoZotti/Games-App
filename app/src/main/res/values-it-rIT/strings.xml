@@ -10,7 +10,7 @@
     <string name="paused">In pausa</string>
     <string name="theme">Tema</string>
     <string name="back">Indietro</string>
-    <string name="settings">Opzioni</string>
+    <string name="settings">Impostazioni</string>
     <string name="language">Lingua</string>
     <string name="favourite">Gioco Preferito</string>
     <string name="usernamePreference">Username predefinito</string>
@@ -54,6 +54,14 @@
         <item>Chiaro</item>
         <item>Scuro</item>
     </string-array>
+    <string-array name="games">
+        <item>Generale</item>
+        <item>Snake</item>
+        <item>Minesweeper</item>
+        <item>Math Game</item>
+        <item>Flag Quiz</item>
+    </string-array>
+    <string name="points">punti</string>
     <string name="flag_pres">"Quiz dove sarà testata la tua conoscenza in ambito di bandiere internazionali. Mettiti alla prova per saperlo! "</string>
     <string name="math_pres">Prova le tue abilità di calcolo aritmetico con questo gioco! In questo gioco viene assegnato un casuale e starà al giocatore effettuare le giuste operazioni per arrivare al numero target assegnato dal gioco.</string>
     <string name="snake_pres">Snake è un serpente che mangiando quello che appare sul display si allunga, e il giocatore guadagna dei punti. Si muove costantemente e deve evitare di andare a sbattere contro gli ostacoli, ma soprattutto contro sé stesso, cosa sempre più difficile man mano che il suo corpo si allunga.</string>

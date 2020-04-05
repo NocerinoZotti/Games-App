@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     tools:context=".SettingsActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -23,15 +23,18 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:layout_below="@id/AppBar">
 
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
+            android:paddingStart="50dp"
             android:text="@string/theme"
             android:textSize="18sp" />
 
@@ -40,16 +43,20 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView1"
+            android:layout_alignParentStart="true"
             android:layout_centerHorizontal="true"
-            android:entries="@array/optionsTheme" />
+            android:entries="@array/optionsTheme"
+            android:paddingStart="50dp" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/spinnerTheme"
+            android:layout_alignParentStart="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
+            android:paddingStart="50dp"
             android:text="@string/language"
             android:textSize="18sp" />
 
@@ -58,16 +65,20 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView2"
+            android:layout_alignParentStart="true"
             android:layout_centerHorizontal="true"
-            android:entries="@array/languagesList" />
+            android:entries="@array/languagesList"
+            android:paddingStart="50dp" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/spinnerLanguage"
+            android:layout_alignStart="@id/textView4"
+            android:layout_alignTop="@id/textView1"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/textView1"
             android:text="@string/favourite"
             android:textSize="18sp" />
 
@@ -76,7 +87,9 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView3"
+            android:layout_alignStart="@id/textView4"
             android:layout_centerHorizontal="true"
+            android:layout_toRightOf="@id/spinnerTheme"
             android:entries="@array/games" />
 
         <TextView
@@ -85,17 +98,19 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/spinnerGame"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="25dp"
+            android:layout_toRightOf="@id/textView2"
             android:text="@string/usernamePreference"
             android:textSize="18sp" />
 
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/UsernamePreference"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView4"
-            android:foregroundGravity="center">
+            android:layout_toRightOf="@id/spinnerLanguage">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputUsername"
@@ -111,9 +126,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/UsernamePreference"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="20dp"
             android:onClick="back"
             android:text="@string/apply" />
 
     </RelativeLayout>
-</LinearLayout>
+</RelativeLayout>

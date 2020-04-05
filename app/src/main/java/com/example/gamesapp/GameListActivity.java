@@ -163,7 +163,7 @@ public class GameListActivity extends AppCompatActivity {
                                     context.startActivity(startQuiz);
                                     break;
                                 default:
-                                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                                    Snackbar.make(view, R.string.select_game, Snackbar.LENGTH_LONG)
                                             .setAction("Action", null).show();
                                     break;
                             }

@@ -11,7 +11,7 @@
         android:id="@+id/pos"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="30dp"
         android:paddingBottom="2dip"
         android:textColor="@color/secondaryColor"
         android:textSize="100sp"
@@ -54,5 +54,16 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="118dp"
+        android:text="@string/points"
+        android:textColor="?android:attr/textColorPrimary"
+        app:layout_constraintStart_toStartOf="@id/score"
+        app:layout_constraintTop_toBottomOf="@id/score" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

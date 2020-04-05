@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/linearLayout" android:orientation="vertical"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    android:background="@drawable/background">
+    android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
         android:layout_marginBottom="10dp"
         android:gravity="center"
         android:text="@string/quiz_title"
-        android:textColor="@color/text_color"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="@dimen/title_size"></TextView>
 
     <TextView
@@ -39,7 +39,8 @@
         android:layout_marginBottom="10dp"
         android:gravity="center"
         android:textColor="@color/text_color"
-        android:textSize="@dimen/text_size"></TextView>
+        android:textSize="@dimen/text_size"
+        android:visibility="gone"></TextView>
 
     <ImageView
         android:id="@+id/flagImageView"
@@ -54,7 +55,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:text="@string/guess_country"
-        android:textColor="@color/text_color"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="@dimen/text_size"></TextView>
 
     <TableLayout
@@ -83,11 +84,13 @@
             android:orientation="horizontal"></TableRow>
     </TableLayout>
 
-    <TextView android:id="@+id/answerTextView"
+    <TextView
+        android:id="@+id/answerTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/answer_size"
-        android:layout_gravity="center" android:textStyle="bold"
-        android:gravity="center"></TextView>
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"></TextView>
 
 </LinearLayout>

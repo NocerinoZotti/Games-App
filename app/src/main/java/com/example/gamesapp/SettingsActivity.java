@@ -40,6 +40,14 @@ public class SettingsActivity extends Activity {
             config.locale = locale;
             getBaseContext().getResources().updateConfiguration(config,
                     getBaseContext().getResources().getDisplayMetrics());
+        } else {
+            String languageToLoad  = "en";
+            Locale locale = new Locale(languageToLoad);
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config,
+                    getBaseContext().getResources().getDisplayMetrics());
         }
 
         super.onCreate(savedInstanceState);

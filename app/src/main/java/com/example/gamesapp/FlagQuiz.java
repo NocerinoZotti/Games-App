@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -71,8 +72,20 @@ public class FlagQuiz extends AppCompatActivity {
         int language = userPreferences.getInt("language",0);
 
         if(theme == 1) setTheme(R.style.AppThemeDark);
+                else {
+                    LinearLayout back = findViewById(R.id.linearLayout);
+                     back.setBackground(getResources().getDrawable(R.drawable.background));
+                 }
         if (language==1) {
             String languageToLoad  = "it";
+            Locale locale = new Locale(languageToLoad);
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config,
+                    getBaseContext().getResources().getDisplayMetrics());
+        } else {
+            String languageToLoad  = "en";
             Locale locale = new Locale(languageToLoad);
             Locale.setDefault(locale);
             Configuration config = new Configuration();

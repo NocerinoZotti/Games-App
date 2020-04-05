@@ -47,6 +47,14 @@ public class GameDetailActivity extends AppCompatActivity {
             config.locale = locale;
             getBaseContext().getResources().updateConfiguration(config,
                     getBaseContext().getResources().getDisplayMetrics());
+        } else {
+            String languageToLoad  = "en";
+            Locale locale = new Locale(languageToLoad);
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config,
+                    getBaseContext().getResources().getDisplayMetrics());
         }
 
         super.onCreate(savedInstanceState);
@@ -84,16 +92,16 @@ public class GameDetailActivity extends AppCompatActivity {
                     getIntent().getStringExtra(GameDetailFragment.ARG_ITEM_ID));
             switch(getIntent().getStringExtra(GameDetailFragment.ARG_ITEM_ID)){
                 case "0":
-                    appBar.setForeground(getDrawable(R.drawable.ic_snake));
+                    appBar.setForeground(getDrawable(R.drawable.snake));
                     break;
                 case "1":
-                    appBar.setForeground(getDrawable(R.drawable.icon));
+                    appBar.setForeground(getDrawable(R.drawable.mine));
                     break;
                 case "2":
-                    appBar.setForeground(getDrawable(R.drawable.ic_math));
+                    appBar.setForeground(getDrawable(R.drawable.math));
                     break;
                 case "3":
-                    appBar.setForeground(getDrawable(R.drawable.background));
+                    appBar.setForeground(getDrawable(R.drawable.flag));
             }
             GameDetailFragment fragment = new GameDetailFragment();
             fragment.setArguments(arguments);

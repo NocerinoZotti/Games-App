@@ -52,6 +52,14 @@ public class MainActivity extends AppCompatActivity {
             config.locale = locale;
             getBaseContext().getResources().updateConfiguration(config,
                     getBaseContext().getResources().getDisplayMetrics());
+        } else {
+            String languageToLoad  = "en";
+            Locale locale = new Locale(languageToLoad);
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config,
+                    getBaseContext().getResources().getDisplayMetrics());
         }
 
         super.onCreate(savedInstanceState);
@@ -153,19 +161,19 @@ public class MainActivity extends AppCompatActivity {
 
         switch (id) {
 
-            case 0:
+            case 1:
                 start = new Intent(this, SnakeScreen.class);
                 startActivity(start);
                 break;
-            case 1:
+            case 2:
                 start = new Intent(this, Minesweeper.class);
                 startActivity(start);
                 break;
-            case 2:
+            case 3:
                 start = new Intent(this, MathGame.class);
                 startActivity(start);
                 break;
-            case 3:
+            case 4:
                 start = new Intent(this, FlagQuiz.class);
                 startActivity(start);
                 break;

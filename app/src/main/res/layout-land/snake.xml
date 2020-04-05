@@ -20,35 +20,39 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <View
-        android:id="@+id/top"
-        android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:layout_below="@id/AppBarLayout"
-        android:onClick="upClick" />
-
-    <View
-        android:id="@+id/left"
-        android:layout_width="360dp"
-        android:layout_height="133dp"
-        android:layout_below="@id/top"
-        android:onClick="leftClick"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <View
         android:id="@+id/right"
-        android:layout_width="365dp"
-        android:layout_height="133dp"
-        android:layout_below="@id/top"
-        android:layout_toRightOf="@id/left"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_below="@id/AppBarLayout"
+        android:layout_alignParentEnd="true"
         android:onClick="rightClick"
         app:layout_constraintTop_toBottomOf="@id/top" />
 
     <View
+        android:id="@+id/left"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_below="@id/AppBarLayout"
+        android:onClick="leftClick"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/top"
+        android:layout_width="380dp"
+        android:layout_height="170dp"
+        android:layout_below="@id/AppBarLayout"
+        android:layout_toLeftOf="@id/right"
+        android:layout_toRightOf="@id/left"
+        android:onClick="upClick" />
+
+    <View
         android:id="@+id/down"
-        android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:layout_below="@id/right"
-        android:foregroundGravity="bottom"
+        android:layout_width="380dp"
+        android:layout_height="185dp"
+        android:layout_below="@id/top"
+        android:layout_toLeftOf="@id/right"
+        android:layout_toRightOf="@id/left"
+        android:foregroundGravity="bottom|center"
         android:onClick="downClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

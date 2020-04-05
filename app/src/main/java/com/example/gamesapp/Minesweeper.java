@@ -41,9 +41,9 @@ public class Minesweeper extends AppCompatActivity
     private int blockDimension = 48; // width of each block
     private int blockPadding = 2; // padding between blocks
 
-    private int numberOfRowsInMineField = 18;
-    private int numberOfColumnsInMineField = 18;
-    private int totalNumberOfMines = 20;
+    private int numberOfRowsInMineField = 11;
+    private int numberOfColumnsInMineField = 11;
+    private int totalNumberOfMines = 12;
 
     // timer to keep track of time elapsed
     private Handler timer = new Handler();
@@ -67,6 +67,14 @@ public class Minesweeper extends AppCompatActivity
         if(theme == 1) setTheme(R.style.AppThemeDark);
         if (language==1) {
             String languageToLoad  = "it";
+            Locale locale = new Locale(languageToLoad);
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config,
+                    getBaseContext().getResources().getDisplayMetrics());
+        } else {
+            String languageToLoad  = "en";
             Locale locale = new Locale(languageToLoad);
             Locale.setDefault(locale);
             Configuration config = new Configuration();

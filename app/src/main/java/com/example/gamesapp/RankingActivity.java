@@ -14,10 +14,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
-import android.widget.Toast;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,6 +42,14 @@ public class RankingActivity extends AppCompatActivity {
         if(theme == 1) setTheme(R.style.AppThemeDark);
         if (language==1) {
             String languageToLoad  = "it";
+            Locale locale = new Locale(languageToLoad);
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config,
+                    getBaseContext().getResources().getDisplayMetrics());
+        } else {
+            String languageToLoad  = "en";
             Locale locale = new Locale(languageToLoad);
             Locale.setDefault(locale);
             Configuration config = new Configuration();
@@ -82,16 +86,16 @@ public class RankingActivity extends AppCompatActivity {
         Cursor c;
 
         switch(selected){
-            case 0:
+            case 1:
                 c = db.getGameRanking("'Snake'");
                 break;
-            case 1:
+            case 2:
                 c = db.getGameRanking("'Minesweeper'");
                 break;
-            case 2:
+            case 3:
                 c = db.getGameRanking("'Math Game'");
                 break;
-            case 3:
+            case 4:
                 c = db.getGameRanking("'Flag Quiz'");
                 break;
             default:
@@ -138,84 +142,6 @@ public class RankingActivity extends AppCompatActivity {
         if (!rankingList.isEmpty()){
         ListAdapter adapter = new SimpleAdapter(RankingActivity.this, rankingList, R.layout.list_item, new String[]{ "pos", "username", "game","score"}, new int[]{R.id.pos,R.id.username,R.id.game,R.id.score});
         ranking.setAdapter(adapter);}
-    }
-
-    private class GetGames extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            Toast.makeText(RankingActivity.this,"Json Data is downloading",Toast.LENGTH_LONG).show();
-        }
-
-        @Override
-        protected Void doInBackground(Void... arg0) {
-            HttpHandler sh = new HttpHandler();
-            // Making a request to url and getting response
-            String url = "https://www.fantascelta.altervista.org/api/ranking.php";
-            String jsonStr = sh.makeServiceCall(url);
-
-            Log.e(TAG, "Response from url: " + jsonStr);
-            if (jsonStr != null) {
-                try {
-                    JSONObject jsonObj = new JSONObject(jsonStr);
-
-                    // Getting JSON Array node
-                    JSONArray ranking = jsonObj.getJSONArray("ranking");
-
-                    // looping through All Contacts
-                    for (int i = 0; i < ranking.length(); i++) {
-                        JSONObject c = ranking.getJSONObject(i);
-                        String pos = c.getString("pos");
-                        String username = c.getString("username");
-                        String game = c.getString("game");
-                        String score = c.getString("score");
-
-                        // tmp hash map for single record
-                        HashMap<String, String> record = new HashMap<>();
-
-                        // adding each child node to HashMap key => value
-                        record.put("pos", pos);
-                        record.put("username", username);
-                        record.put("game", game);
-                        record.put("score", score);
-
-                        // adding record to record list
-                        //rankingList.add(record);
-                    }
-                } catch (final JSONException e) {
-                    Log.e(TAG, "Json parsing error: " + e.getMessage());
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getApplicationContext(),
-                                    "Json parsing error: " + e.getMessage(),
-                                    Toast.LENGTH_LONG).show();
-                        }
-                    });
-
-                }
-
-            } else {
-                Log.e(TAG, "Couldn't get json from server.");
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(getApplicationContext(),
-                                "Couldn't get json from server. Check LogCat for possible errors!",
-                                Toast.LENGTH_LONG).show();
-                    }
-                });
-            }
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            super.onPostExecute(result);
-            //ListAdapter adapter = new SimpleAdapter(RankingActivity.this, rankingList, R.layout.list_item, new String[]{ "pos", "username", "game","score"}, new int[]{R.id.pos,R.id.username,R.id.game,R.id.score});
-            //ranking.setAdapter(adapter);
-        }
     }
 
     public InputStream OpenHttpConnection(String urlString) throws IOException

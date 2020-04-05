@@ -14,9 +14,9 @@
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorAccent">@color/secondaryColor</item>
-        <item name="android:alertDialogStyle">@style/Theme.AppCompat.DayNight.Dialog.Alert</item>
-        <item name="android:alertDialogIcon">@color/black</item>
-        <item name="dialogTheme">@style/Theme.AppCompat.DayNight.Dialog.Alert</item>
+        <item name="android:alertDialogStyle">@style/AppThemeDark.DialogTheme</item>
+        <item name="alertDialogStyle">@style/AppThemeDark.DialogTheme</item>
+        <item name="dialogTheme">@style/DialogTheme</item>
         <item name="android:textColorPrimary">@color/white</item>
     </style>
 
@@ -37,25 +37,18 @@
         <item name="colorControlNormal">@color/primaryLightColor</item>
     </style>
 
-    <style name="AppThemeDark.DialogTheme" parent="Theme.MaterialComponents.Light.DarkActionBar" >
+    <style name="AppThemeDark.DialogTheme" parent="ThemeOverlay.MaterialComponents.Dark" >
         <item name="android:background">@color/black</item>
         <item name="color">@color/black</item>
-        <item name="background">@color/darkestgray</item>
+        <item name="background">@color/black</item>
         <item name="colorBackgroundFloating">@color/black</item>
         <item name="android:listDividerAlertDialog">@color/darkestgray</item>
         <item name="android:colorBackground">@color/black</item>
         <item name="colorPrimary">@color/black</item>
         <item name="colorSecondary">@color/darkestgray</item>
-        <item name="android:textColor">@color/lightgray</item>
-        <item name="android:windowBackground">@color/black</item>
-        <item name="android:windowFrame">@color/black</item>
-        <item name="android:buttonStyle">@style/AlertDialogButton</item>
         <item name="colorAccent">@color/darkestgray</item>
+        <item name="android:textAppearance">@style/AppThemeDark</item>
         <item name="android:lineSpacingMultiplier">1.1</item>
-    </style>
-
-    <style name="AlertDialogTitle" parent="TextAppearance.AppCompat.Title">
-        <item name="android:textSize">20sp</item>
     </style>
 
     <style name="AlertDialogButton" parent="TextAppearance.AppCompat.Button">

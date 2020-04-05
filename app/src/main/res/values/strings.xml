@@ -13,11 +13,14 @@
     <string name="previous">Previous</string>
 
     <string-array name="games">
+        <item>General</item>
         <item>Snake</item>
         <item>Minesweeper</item>
         <item>Math Game</item>
         <item>Flag Quiz</item>
     </string-array>
+
+    <string name="points">points</string>
 
     <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
     <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>

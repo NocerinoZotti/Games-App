@@ -74,6 +74,14 @@ public class MathGame extends AppCompatActivity {
             config.locale = locale;
             getBaseContext().getResources().updateConfiguration(config,
                     getBaseContext().getResources().getDisplayMetrics());
+        } else {
+            String languageToLoad  = "en";
+            Locale locale = new Locale(languageToLoad);
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config,
+                    getBaseContext().getResources().getDisplayMetrics());
         }
 
         super.onCreate(savedInstanceState);
@@ -788,7 +796,7 @@ public class MathGame extends AppCompatActivity {
             mHandler.removeCallbacks(mUpdateTimeTask);
             String time = mTime.getText().toString();
             String[] gameTime= time.split(":");
-            score = 1003 - ((parseInt(gameTime[0])*22 + (parseInt(gameTime[1]) )) * 3);
+            score = 113 - (parseInt(gameTime[0])*60 + parseInt(gameTime[1]));
             if (score>0)
                 recordScore(score, "Math Game", this);
         }
