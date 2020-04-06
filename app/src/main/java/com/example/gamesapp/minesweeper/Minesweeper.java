@@ -1,4 +1,4 @@
-package com.example.gamesapp;
+package com.example.gamesapp.minesweeper;
 
 import java.util.Locale;
 import java.util.Random;
@@ -23,8 +23,9 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.gamesapp.DBHelper;
+import com.example.gamesapp.R;
 import com.google.android.material.textfield.TextInputEditText;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -65,6 +66,7 @@ public class Minesweeper extends AppCompatActivity
         int language = userPreferences.getInt("language",0);
 
         if(theme == 1) setTheme(R.style.AppThemeDark);
+        else getWindow().setBackgroundDrawableResource(R.color.primaryDarkColor);
         if (language==1) {
             String languageToLoad  = "it";
             Locale locale = new Locale(languageToLoad);
@@ -645,6 +647,7 @@ public class Minesweeper extends AppCompatActivity
                         final String username = userPreferences.getString("username", null);
                         final TextInputEditText input = new TextInputEditText(context);
                         input.setText(username);
+                        input.setLabelFor(R.id.username);
                         builder.setView(input);
                         builder.setPositiveButton(getResources().getString(R.string.confirm), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {

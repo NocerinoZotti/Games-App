@@ -39,11 +39,11 @@
                 android:value="com.example.gamesapp.GameListActivity" />
         </activity>
         <activity
-            android:name=".SnakeScreen"
+            android:name=".snake.SnakeScreen"
             android:label="GameScreen"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Minesweeper" />
-        <activity android:name=".SnakeGame" />
+        <activity android:name=".minesweeper.Minesweeper" />
+        <activity android:name=".snake.SnakeGame" />
         <activity android:name=".RankingActivity" />
     </application>
 

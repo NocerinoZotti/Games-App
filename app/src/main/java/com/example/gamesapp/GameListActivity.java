@@ -1,6 +1,5 @@
 package com.example.gamesapp;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -10,21 +9,18 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.view.MotionEventCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 
-import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.example.gamesapp.minesweeper.Minesweeper;
+import com.example.gamesapp.snake.SnakeScreen;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.gamesapp.dummy.DummyContent;
@@ -32,9 +28,6 @@ import com.example.gamesapp.dummy.DummyContent;
 import java.util.List;
 import java.util.Locale;
 
-import static android.view.MotionEvent.ACTION_BUTTON_PRESS;
-import static androidx.core.view.MotionEventCompat.*;
-import static androidx.core.view.accessibility.AccessibilityEventCompat.getAction;
 import static com.example.gamesapp.GameDetailFragment.ARG_ITEM_ID;
 
 /**

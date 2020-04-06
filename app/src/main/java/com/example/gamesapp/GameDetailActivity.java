@@ -6,6 +6,8 @@ import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 
+import com.example.gamesapp.minesweeper.Minesweeper;
+import com.example.gamesapp.snake.SnakeScreen;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

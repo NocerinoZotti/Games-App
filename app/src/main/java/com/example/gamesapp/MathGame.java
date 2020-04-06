@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -14,19 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 import com.google.android.material.textfield.TextInputEditText;
-
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.Locale;
 import java.util.Random;
-
-import static java.lang.Integer.getInteger;
 import static java.lang.Integer.parseInt;
 
 public class MathGame extends AppCompatActivity {
@@ -48,7 +40,6 @@ public class MathGame extends AppCompatActivity {
     private String CURRENTMODE = PLUS;
     final static int CEILINGRESET = 10000;
     final static int CEILING = 1000;
-    final static int CEILINGHALF = CEILING/2;
     private Random myRandom = new Random();
     private int myCurrentSum;
     private int targetInt;
@@ -66,6 +57,7 @@ public class MathGame extends AppCompatActivity {
         int language = userPreferences.getInt("language",0);
 
         if(theme == 1) setTheme(R.style.AppThemeDark);
+
         if (language==1) {
             String languageToLoad  = "it";
             Locale locale = new Locale(languageToLoad);

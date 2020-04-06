@@ -16,7 +16,7 @@ You should have received a copy of the GNU General Public License
 along with Snake.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package com.example.gamesapp;
+package com.example.gamesapp.snake;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -29,6 +29,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.gamesapp.DBHelper;
+import com.example.gamesapp.R;
 import com.google.android.material.textfield.TextInputEditText;
 
 import androidx.appcompat.widget.Toolbar;

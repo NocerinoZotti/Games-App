@@ -20,16 +20,12 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
 import com.google.android.material.textfield.TextInputEditText;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -62,7 +58,6 @@ public class FlagQuiz extends AppCompatActivity {
 
     SharedPreferences userPreferences;
 
-
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -71,11 +66,8 @@ public class FlagQuiz extends AppCompatActivity {
         int theme = userPreferences.getInt("theme",0);
         int language = userPreferences.getInt("language",0);
 
-        if(theme == 1) setTheme(R.style.AppThemeDark);
-                else {
-                    LinearLayout back = findViewById(R.id.linearLayout);
-                     back.setBackground(getResources().getDrawable(R.drawable.background));
-                 }
+        if(theme == 1) setTheme(R.style.AppThemeDark) ;
+            else getWindow().setBackgroundDrawableResource(R.drawable.background);
         if (language==1) {
             String languageToLoad  = "it";
             Locale locale = new Locale(languageToLoad);
@@ -97,9 +89,9 @@ public class FlagQuiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flag_quiz);
 
-        fileNameList = new ArrayList<String>();
-        quizCountriesList = new ArrayList<String>();
-        regionsMap = new HashMap<String, Boolean>();
+        fileNameList = new ArrayList<>();
+        quizCountriesList = new ArrayList<>();
+        regionsMap = new HashMap<>();
         guessRows = 2;
         random = new Random();
         handler = new Handler();
@@ -122,15 +114,11 @@ public class FlagQuiz extends AppCompatActivity {
             getResources().getStringArray(R.array.regionsList);
         for (String region : regionNames )
             regionsMap.put(region, true);
-        questionNumberTextView =
-                (TextView) findViewById(R.id.questionNumberTextView);
-        flagImageView = (ImageView) findViewById(R.id.flagImageView);
-        buttonTableLayout =
-                (TableLayout) findViewById(R.id.buttonTableLayout);
-        answerTextView = (TextView) findViewById(R.id.answerTextView);
-        questionNumberTextView.setText(
-                getResources().getString(R.string.question) + " 1 " +
-                        getResources().getString(R.string.of) + " 10");
+        questionNumberTextView = findViewById(R.id.questionNumberTextView);
+        flagImageView = findViewById(R.id.flagImageView);
+        buttonTableLayout = findViewById(R.id.buttonTableLayout);
+        answerTextView = findViewById(R.id.answerTextView);
+        questionNumberTextView.setText(getResources().getString(R.string.question) + " 1 " + getResources().getString(R.string.of) + " 10");
 
         resetQuiz();
     }

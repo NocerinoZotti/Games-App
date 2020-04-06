@@ -1,9 +1,12 @@
-package com.example.gamesapp;
+package com.example.gamesapp.minesweeper;
 
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
+
+import com.example.gamesapp.R;
+
 import androidx.appcompat.widget.AppCompatButton;
 
 public class Block extends AppCompatButton {
