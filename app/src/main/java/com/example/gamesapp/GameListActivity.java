@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -54,20 +53,9 @@ public class GameListActivity extends AppCompatActivity {
         // Grab Existing Preferences
         userPreferences  = getSharedPreferences("settings", 0);
         int theme = userPreferences.getInt("theme",0);
-        int language = userPreferences.getInt("language",0);
-        final int game  = userPreferences.getInt("game",0);
 
         // Set Dark Theme
         if(theme == 1) setTheme(R.style.AppThemeDark);
-        if (language==1) {
-            String languageToLoad  = "it";
-            Locale locale = new Locale(languageToLoad);
-            Locale.setDefault(locale);
-            Configuration config = new Configuration();
-            config.locale = locale;
-            getBaseContext().getResources().updateConfiguration(config,
-                    getBaseContext().getResources().getDisplayMetrics());
-        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_list);

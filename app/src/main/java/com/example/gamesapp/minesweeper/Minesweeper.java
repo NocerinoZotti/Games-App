@@ -1,13 +1,11 @@
 package com.example.gamesapp.minesweeper;
 
-import java.util.Locale;
 import java.util.Random;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Gravity;
@@ -22,7 +20,6 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.gamesapp.DBHelper;
 import com.example.gamesapp.R;
 import com.google.android.material.textfield.TextInputEditText;
@@ -63,32 +60,14 @@ public class Minesweeper extends AppCompatActivity
         // Grab Existing Preferences
         userPreferences  = getSharedPreferences("settings", 0);
         int theme = userPreferences.getInt("theme",0);
-        int language = userPreferences.getInt("language",0);
 
         if(theme == 1) setTheme(R.style.AppThemeDark);
         else getWindow().setBackgroundDrawableResource(R.color.primaryDarkColor);
-        if (language==1) {
-            String languageToLoad  = "it";
-            Locale locale = new Locale(languageToLoad);
-            Locale.setDefault(locale);
-            Configuration config = new Configuration();
-            config.locale = locale;
-            getBaseContext().getResources().updateConfiguration(config,
-                    getBaseContext().getResources().getDisplayMetrics());
-        } else {
-            String languageToLoad  = "en";
-            Locale locale = new Locale(languageToLoad);
-            Locale.setDefault(locale);
-            Configuration config = new Configuration();
-            config.locale = locale;
-            getBaseContext().getResources().updateConfiguration(config,
-                    getBaseContext().getResources().getDisplayMetrics());
-        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_minesweeper);
 
-        info = (ImageButton)findViewById(R.id.button_play);
+        info = (ImageButton) findViewById(R.id.button_play);
 
         info.setOnClickListener(new View.OnClickListener() {
             @Override

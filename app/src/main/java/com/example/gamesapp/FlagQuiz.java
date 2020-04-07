@@ -64,27 +64,9 @@ public class FlagQuiz extends AppCompatActivity {
         // Grab Existing Preferences
         userPreferences  = getSharedPreferences("settings", 0);
         int theme = userPreferences.getInt("theme",0);
-        int language = userPreferences.getInt("language",0);
 
         if(theme == 1) setTheme(R.style.AppThemeDark) ;
             else getWindow().setBackgroundDrawableResource(R.drawable.background);
-        if (language==1) {
-            String languageToLoad  = "it";
-            Locale locale = new Locale(languageToLoad);
-            Locale.setDefault(locale);
-            Configuration config = new Configuration();
-            config.locale = locale;
-            getBaseContext().getResources().updateConfiguration(config,
-                    getBaseContext().getResources().getDisplayMetrics());
-        } else {
-            String languageToLoad  = "en";
-            Locale locale = new Locale(languageToLoad);
-            Locale.setDefault(locale);
-            Configuration config = new Configuration();
-            config.locale = locale;
-            getBaseContext().getResources().updateConfiguration(config,
-                    getBaseContext().getResources().getDisplayMetrics());
-        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flag_quiz);

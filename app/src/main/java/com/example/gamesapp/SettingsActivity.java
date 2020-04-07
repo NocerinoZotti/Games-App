@@ -26,29 +26,11 @@ public class SettingsActivity extends Activity {
         // Grab Existing Settings
         userPreferences  = getSharedPreferences("settings", 0);
         int theme = userPreferences.getInt("theme",0);
-        int language = userPreferences.getInt("language",0);
         int game  = userPreferences.getInt("game",0);
         String username = userPreferences.getString("username", null);
 
         // Set Dark Theme
         if(theme == 1) setTheme(R.style.AppThemeDark);
-        if (language==1) {
-            String languageToLoad  = "it";
-            Locale locale = new Locale(languageToLoad);
-            Locale.setDefault(locale);
-            Configuration config = new Configuration();
-            config.locale = locale;
-            getBaseContext().getResources().updateConfiguration(config,
-                    getBaseContext().getResources().getDisplayMetrics());
-        } else {
-            String languageToLoad  = "en";
-            Locale locale = new Locale(languageToLoad);
-            Locale.setDefault(locale);
-            Configuration config = new Configuration();
-            config.locale = locale;
-            getBaseContext().getResources().updateConfiguration(config,
-                    getBaseContext().getResources().getDisplayMetrics());
-        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
@@ -67,14 +49,12 @@ public class SettingsActivity extends Activity {
 
         // Grab Settings Spinners
         themeSpinner = (Spinner) findViewById(R.id.spinnerTheme);
-        languageSpinner = (Spinner) findViewById(R.id.spinnerLanguage);
         gameSpinner = (Spinner) findViewById(R.id.spinnerGame);
 
         usernameInput = (TextInputEditText) findViewById(R.id.inputUsername);
 
         // Set Spinner Current Values
         themeSpinner.setSelection(theme);
-        languageSpinner.setSelection(language);
         gameSpinner.setSelection(game);
         usernameInput.setText(username);
     }
@@ -90,14 +70,12 @@ public class SettingsActivity extends Activity {
 
         // Get New Values
         int theme = themeSpinner.getSelectedItemPosition();
-        int language = languageSpinner.getSelectedItemPosition();
         int game = gameSpinner.getSelectedItemPosition();
         String username = usernameInput.getText().toString();
 
         // Save in Settings
         userPreferencesEditor = userPreferences.edit();
         userPreferencesEditor.putInt("theme", theme);
-        userPreferencesEditor.putInt("language", language);
         userPreferencesEditor.putInt("game", game);
         userPreferencesEditor.putString("username", username);
         userPreferencesEditor.apply();

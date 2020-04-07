@@ -3,7 +3,6 @@ package com.example.gamesapp;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Bundle;
 
 import com.example.gamesapp.minesweeper.Minesweeper;
@@ -24,7 +23,6 @@ import android.widget.ImageButton;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         // Grab Existing Preferences
         userPreferences  = getSharedPreferences("settings", 0);
         int theme = userPreferences.getInt("theme",0);
-        int language = userPreferences.getInt("language",0);
         final int game  = userPreferences.getInt("game",0);
 
         onlineDb = FirebaseDatabase.getInstance().getReference();
@@ -47,23 +44,6 @@ public class MainActivity extends AppCompatActivity {
         db = new DBHelper(this);
 
         if(theme == 1) setTheme(R.style.AppThemeDark);
-        if (language==1) {
-            String languageToLoad  = "it";
-            Locale locale = new Locale(languageToLoad);
-            Locale.setDefault(locale);
-            Configuration config = new Configuration();
-            config.locale = locale;
-            getBaseContext().getResources().updateConfiguration(config,
-                    getBaseContext().getResources().getDisplayMetrics());
-        } else {
-            String languageToLoad  = "en";
-            Locale locale = new Locale(languageToLoad);
-            Locale.setDefault(locale);
-            Configuration config = new Configuration();
-            config.locale = locale;
-            getBaseContext().getResources().updateConfiguration(config,
-                    getBaseContext().getResources().getDisplayMetrics());
-        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);

@@ -26,7 +26,7 @@
         android:layout_height="fill_parent">
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/themeView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -39,33 +39,15 @@
             android:id="@+id/spinnerTheme"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView1"
+            android:layout_below="@+id/themeView"
             android:layout_centerHorizontal="true"
             android:entries="@array/optionsTheme" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/favGameView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/spinnerTheme"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text="@string/language"
-            android:textSize="18sp" />
-
-        <Spinner
-            android:id="@+id/spinnerLanguage"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView2"
-            android:layout_centerHorizontal="true"
-            android:entries="@array/languagesList" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/spinnerLanguage"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:text="@string/favourite"
@@ -75,12 +57,12 @@
             android:id="@+id/spinnerGame"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView3"
+            android:layout_below="@+id/favGameView"
             android:layout_centerHorizontal="true"
             android:entries="@array/games" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/userPrefView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/spinnerGame"
@@ -94,7 +76,7 @@
             android:id="@+id/UsernamePreference"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView4"
+            android:layout_below="@+id/userPrefView"
             android:foregroundGravity="center">
 
             <com.google.android.material.textfield.TextInputEditText
